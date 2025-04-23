@@ -1,0 +1,13 @@
+Main text in black
+Headers in white
+
+Mobile view: max - 720px
+Tablet view: 720px - 1024px
+Desktop view: min - 1024px
+
+Colours to be taken from design
+
+### Spacing ###
+Mobile: 20px
+Tablet: 30px
+Desktop: 45px
