@@ -41,6 +41,29 @@
     display: flex;
 }
 
-p{
+.card-p{
     font-size: 0.5rem;
+}
+
+#project-title-container{
+    background-color:  #42b451;
+}
+
+#projects-header{
+    margin: 20px 0px 0px 20px;
+    padding: 20px 0px;
+    color: white;
+    font-size: 2rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+}
+
+#projects-p-container{
+    margin: 20px 0px 0px 20px;
+}
+
+.projects-p{
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
 }
