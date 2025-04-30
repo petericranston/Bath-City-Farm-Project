@@ -1,4 +1,46 @@
-.card-images{
-    width: 5%
+#events-header{
+    display: flex;
+    justify-content: center;
 }
 
+#event-title{
+    font-size: 3rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    margin: 20px;
+    text-align: center;
+}
+
+#ongoing-header{
+    font-size: 2rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    margin: 20px 0px;
+    text-align: start;
+}
+
+#events-container{
+    margin-left: 20px;
+}
+
+.card-images{
+    width: 100%;
+    
+}
+
+.image-container{
+    width: 30%;
+    margin-right: 5px;
+}
+
+.card-title{
+    font-size: 0.7rem;
+}
+
+.card-body{
+    display: flex;
+}
+
+p{
+    font-size: 0.5rem;
+}
