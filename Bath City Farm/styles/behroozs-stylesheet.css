@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-#event-title{
+.event-title{
     font-size: 3rem;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
@@ -25,12 +25,14 @@
 
 .card-images{
     width: 100%;
-    
 }
 
 .image-container{
     width: 30%;
     margin-right: 5px;
+    @media (min-width: 721px) {
+        width: 20%;
+    }
 }
 
 .card-title{
@@ -66,4 +68,55 @@
     font-size: 1rem;
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+    .card-title{
+        font-size: 1.5rem;
+    }
+    .card-p{
+        font-size: 1rem;
+    }
+    #ongoing-header{
+        font-size: 3rem; 
+    }
+    .event-title{
+        font-size: 4rem;
+    }
+    #projects-header{
+        font-size: 3rem;
+    }
+    .projects-p{
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-title{
+        font-size: 2rem;
+    }
+    .card-p{
+        font-size: 1.5rem;
+    }
+    .image-container{
+        width: 25%;
+    }
+    #ongoing-header{
+        font-size: 4rem; 
+    }
+    #projects-header{
+        font-size: 4rem;
+    }
+}
+
+@media (min-width: 1300px) {
+    .card-title{
+        font-size: 2.5rem;
+    }
+    .card-p{
+        font-size: 1.7rem;
+    }
+    .event-title{
+        font-size: 4.5rem;
+    }
 }
