@@ -44,12 +44,21 @@
     font-size: 0.5rem;
 }
 
-#project-header-container{
+.green-header-container{
     background-color:  #42b451;
 }
 
-#projects-header{
+.header-left{
     margin: 20px 0px 0px 20px;
+    padding: 20px 0px;
+    color: white;
+    font-size: 2rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+}
+.header-right{
+    text-align: end;
+    margin: 0px 20px 0px 0px;
     padding: 20px 0px;
     color: white;
     font-size: 2rem;
@@ -60,8 +69,20 @@
 #projects-p-container{
     margin: 20px 0px 0px 20px;
 }
+#info-p-container-left{
+    margin: 20px 0px 0px 20px;
+}
+#info-p-container-right{
+    margin: 20px 20px 0px 20px;
+}
 
-.projects-p{
+.main-p{
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+}
+.main-p-right{
+    text-align: end;
     font-size: 1rem;
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
@@ -77,10 +98,10 @@
     #ongoing-header{
         font-size: 2.5rem; 
     }
-    #projects-header{
+    .header-left{
         font-size: 2.5rem;
     }
-    .projects-p{
+    .main-p{
         font-size: 1.5rem;
     }
 }
@@ -92,7 +113,7 @@
     #ongoing-header{
         font-size: 3rem; 
     }
-    #projects-header{
+    .header-left{
         font-size: 3rem;
     }
     .image-container{
