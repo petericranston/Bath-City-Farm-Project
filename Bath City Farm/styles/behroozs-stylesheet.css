@@ -1,4 +1,4 @@
-#events-header{
+.events-header{
     display: flex;
     justify-content: center;
 }
@@ -30,9 +30,6 @@
 .image-container{
     width: 30%;
     margin-right: 5px;
-    @media (min-width: 721px) {
-        width: 20%;
-    }
 }
 
 .card-title{
@@ -47,7 +44,7 @@
     font-size: 0.5rem;
 }
 
-#project-title-container{
+#project-header-container{
     background-color:  #42b451;
 }
 
@@ -70,7 +67,7 @@
     font-weight: 700;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 721px) {
     .card-title{
         font-size: 1.5rem;
     }
@@ -78,45 +75,46 @@
         font-size: 1rem;
     }
     #ongoing-header{
-        font-size: 3rem; 
+        font-size: 2.5rem; 
     }
+    #projects-header{
+        font-size: 2.5rem;
+    }
+    .projects-p{
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1000px) {
     .event-title{
         font-size: 4rem;
+    }
+    #ongoing-header{
+        font-size: 3rem; 
     }
     #projects-header{
         font-size: 3rem;
     }
-    .projects-p{
-        font-size: 1.3rem;
+    .image-container{
+        width: 17%;
     }
+    
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
+    .event-title{
+        font-size: 4.5rem;
+    }  
+}
+
+@media (min-width: 1800px) {
     .card-title{
         font-size: 2rem;
-    }
+    }  
     .card-p{
         font-size: 1.5rem;
     }
     .image-container{
-        width: 25%;
-    }
-    #ongoing-header{
-        font-size: 4rem; 
-    }
-    #projects-header{
-        font-size: 4rem;
-    }
-}
-
-@media (min-width: 1300px) {
-    .card-title{
-        font-size: 2.5rem;
-    }
-    .card-p{
-        font-size: 1.7rem;
-    }
-    .event-title{
-        font-size: 4.5rem;
+        width: 15%;
     }
 }
