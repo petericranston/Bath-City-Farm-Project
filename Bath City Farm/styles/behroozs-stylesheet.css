@@ -87,6 +87,16 @@
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
 }
+/* .carousel-item{
+Bootstrap is overwriting this and i need to find a fiz
+    display: flex;
+    justify-content: center;
+} */
+
+.carousel-size{
+    width: 100%;
+    height: 425px;
+}
 
 @media (min-width: 721px) {
     .card-title{
@@ -101,8 +111,17 @@
     .header-left{
         font-size: 2.5rem;
     }
+    .header-right{
+        font-size: 2.5rem;
+    }
     .main-p{
         font-size: 1.5rem;
+    }
+    .main-p-right{
+        font-size: 1.5rem;
+    }
+    .carousel-size{
+        width: 70%;
     }
 }
 
@@ -116,16 +135,27 @@
     .header-left{
         font-size: 3rem;
     }
-    .image-container{
-        width: 17%;
+    .header-right{
+        font-size: 3rem;
     }
-    
+    .image-container{
+        width: 20%;
+    }
+    .carousel-size{
+        width: 60%;
+    }
 }
 
 @media (min-width: 1400px) {
     .event-title{
         font-size: 4.5rem;
     }  
+    .image-container{
+        width: 15%;
+    }
+    .carousel-size{
+        width: 50%;
+    }
 }
 
 @media (min-width: 1800px) {
@@ -135,7 +165,7 @@
     .card-p{
         font-size: 1.5rem;
     }
-    .image-container{
-        width: 15%;
+    .carousel-size{
+        width: 40%;
     }
 }
