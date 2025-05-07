@@ -1,0 +1,59 @@
+body {
+  background-color: white;
+}
+.weather-header {
+  background-color: #2f6237;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather-info {
+  line-height: 1.2;
+}
+.hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.map-section {
+  text-align: center;
+  padding: 20px 0;
+}
+.achievements-section {
+  border-top: 1px solid #ccc;
+  padding: 20px;
+}
+.progress {
+  height: 15px;
+}
+.progress-bar-custom {
+  background-color: #db6f6f;
+}
+
+.bottom-image-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.bottom-image-nav img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 3px;
+}
+
+.achievements-content {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
