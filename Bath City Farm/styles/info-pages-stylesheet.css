@@ -71,30 +71,6 @@ body {
   margin-bottom: 20px;
 }
 
-.bottom-image-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-top: 2px solid #ccc;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 12px 0;
-  z-index: 1000;
-}
-
-.bottom-image-nav a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #444;
-  font-size: 0.75rem;
-}
-
-.bottom-image-nav img {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 4px;
+.quizTitle {
+  margin-top: 60px;
 }
