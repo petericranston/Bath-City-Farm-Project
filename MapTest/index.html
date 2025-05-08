@@ -1,36 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <title>Bath City Farm Map</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js"></script>
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=`, initial-scale=1.0" />
+  <title>Image Map</title>
   <style>
-    body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
+    #svg-container {
+      background: lightgray;
+      pointer-events: auto;
+    }
+    #svg-container * {
+      pointer-events: all !important;
+    }
   </style>
 </head>
+
 <body>
-<div id="map"></div>
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiNDUwMTg2IiwiYSI6ImNtOHg3YXdjYTAwbWwya3M0aGZpYnEyaTcifQ.Ih1fy2kaIDuOFXPyuIvJUQ';
-
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v12', // you can customize this style
-    center: [-2.3923, 51.3755], // Approx coordinates for Bath City Farm
-    zoom: 15
-  });
-
-  // Add zoom and rotation controls
-  map.addControl(new mapboxgl.NavigationControl());
-
-  // Example Marker
-  new mapboxgl.Marker()
-    .setLngLat([-2.3923, 51.3755])
-    .setPopup(new mapboxgl.Popup().setHTML("<h3>Bath City Farm</h3><p>Welcome!</p>"))
-    .addTo(map);
-</script>
+  <div id="svg-container"></div>
 </body>
+
+<!-- <script defer>
+  fetch('Map.svg')
+  .then(response => response.text())
+  .then(data => {
+    const container = document.getElementById('svg-container');
+    container.innerHTML = data;
+
+    const svg = container.querySelector('svg');
+    const circles = svg.querySelectorAll('circle')
+    const squares = svg.querySelectorAll('rect')
+    const ellipses = svg.querySelectorAll('ellipse')
+  
+    const shapes = [...circles, ...squares, ...ellipses];
+
+shapes.forEach(shape => {
+  shape.addEventListener('click', () => {
+    const link = shape.dataset.link || `${shape.id}.html`;
+    if (link) {
+      window.location.href = link;
+    }
+  });
+});
+});
+</script> -->
+<script defer>
+  fetch('Map.svg')
+    .then(response => response.text())
+    .then(svgText => {
+      const parser = new DOMParser();
+      const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+      const svgElement = svgDoc.documentElement;
+
+      // Ensure pointer events are enabled on all elements in the SVG
+      svgElement.querySelectorAll('*').forEach(shape => {
+        shape.style.pointerEvents = 'all';
+      });
+
+      const container = document.getElementById('svg-container');
+      container.innerHTML = ''; // Clear container
+      container.appendChild(svgElement); // Insert real, parsed SVG
+
+      // Now attach events
+      const shapes = svgElement.querySelectorAll('circle, rect, ellipse');
+      shapes.forEach(shape => {
+        shape.addEventListener('click', () => {
+          console.log(`Clicked: ${shape.id}`);
+          const link = shape.dataset.link || `${shape.id}.html`;
+          if (link) {
+            window.location.href = link;
+          }
+        });
+      });
+    });
+</script>
+
+
 </html>
