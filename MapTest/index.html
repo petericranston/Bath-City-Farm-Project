@@ -7,7 +7,6 @@
   <title>Image Map</title>
   <style>
     #svg-container {
-      background: lightgray;
       pointer-events: auto;
     }
     #svg-container * {
@@ -20,30 +19,6 @@
   <div id="svg-container"></div>
 </body>
 
-<!-- <script defer>
-  fetch('Map.svg')
-  .then(response => response.text())
-  .then(data => {
-    const container = document.getElementById('svg-container');
-    container.innerHTML = data;
-
-    const svg = container.querySelector('svg');
-    const circles = svg.querySelectorAll('circle')
-    const squares = svg.querySelectorAll('rect')
-    const ellipses = svg.querySelectorAll('ellipse')
-  
-    const shapes = [...circles, ...squares, ...ellipses];
-
-shapes.forEach(shape => {
-  shape.addEventListener('click', () => {
-    const link = shape.dataset.link || `${shape.id}.html`;
-    if (link) {
-      window.location.href = link;
-    }
-  });
-});
-});
-</script> -->
 <script defer>
   fetch('Map.svg')
     .then(response => response.text())
