@@ -8,14 +8,11 @@
 	.st2{font-family:'MyriadPro-Regular';}
 	.st3{font-size:9px;}
 </style>
-<image style="overflow:visible;enable-background:new    ;" width="649" height="344" id="Map" xlink:href="96A6A459.png"  transform="matrix(0.9985 0 0 0.9985 0 2.7544)">
+<image style="overflow:visible;enable-background:new    ;" width="649" height="344" id="Map" xlink:href="/Bath City Farm/Peter's-html/Content/MapImg.png"  transform="matrix(0.9985 0 0 0.9985 0 2.7544)">
 </image>
 <circle id="Rabbits" class="st0" cx="310.5" cy="253.2" r="13.5"/>
 <rect id="Pigs" x="133.2" y="266.7" class="st0" width="81.2" height="54.7"/>
 <circle id="Cows" class="st0" cx="57" cy="97.8" r="18.5"/>
-<circle id="Chickens" class="st0" cx="332.8" cy="228.4" r="17.7"/>
 <circle id="Ducks" class="st0" cx="222.6" cy="194.7" r="12.4"/>
 <ellipse id="Sheep" class="st0" cx="73.4" cy="230" rx="23" ry="22.5"/>
-<circle class="st1" cx="434.2" cy="243.2" r="3.6"/>
-<text transform="matrix(1 0 0 1 437.8511 246.8473)" class="st2 st3">You are Here</text>
 </svg>

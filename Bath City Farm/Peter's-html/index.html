@@ -152,11 +152,7 @@
 
     <main>
       <!-- Map Section -->
-      <section id="map-section">
-        <div id="svg-container-wrapper">
-          <div id="svg-container"></div>
-        </div>
-      </section>
+      <div id="svg-container"></div>
 
       <!-- Sticker Book Button with Centered Content and Even Side Margins -->
       <div class="mx-3 mb-3 sticker-button">
@@ -308,62 +304,6 @@
             });
           });
         });
-
-      let scale = 1;
-      let originX = 0;
-      let originY = 0;
-
-      const container = document.getElementById("svg-container");
-      const wrapper = document.getElementById("svg-container-wrapper");
-
-      wrapper.addEventListener("wheel", (e) => {
-        e.preventDefault();
-
-        const rect = wrapper.getBoundingClientRect();
-        const offsetX = e.clientX - rect.left;
-        const offsetY = e.clientY - rect.top;
-
-        const zoomIntensity = 0.1;
-        const direction = e.deltaY > 0 ? -1 : 1;
-        const factor = 1 + direction * zoomIntensity;
-
-        scale *= factor;
-        originX = (offsetX / wrapper.offsetWidth) * 100;
-        originY = (offsetY / wrapper.offsetHeight) * 100;
-
-        container.style.transformOrigin = `${originX}% ${originY}%`;
-        container.style.transform = `scale(${scale}) translate(${panX}px, ${panY}px)`;
-      });
-
-      let isDragging = false;
-      let startX, startY;
-      let panX = 0,
-        panY = 0;
-
-      wrapper.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        startX = e.clientX;
-        startY = e.clientY;
-      });
-
-      wrapper.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-        panX += dx / scale;
-        panY += dy / scale;
-        container.style.transform = `scale(${scale}) translate(${panX}px, ${panY}px)`;
-        startX = e.clientX;
-        startY = e.clientY;
-      });
-
-      wrapper.addEventListener("mouseup", () => {
-        isDragging = false;
-      });
-      wrapper.addEventListener("mouseleave", () => {
-        isDragging = false;
-      });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
