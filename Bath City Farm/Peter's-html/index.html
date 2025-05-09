@@ -152,12 +152,7 @@
 
     <!-- Map Section -->
     <section id="map-section" class="map-section">
-      <img
-        src="map-placeholder.png"
-        alt="Map Placeholder"
-        class="img-fluid"
-        style="max-width: 90%; height: auto"
-      />
+      <div id="svg-container"></div>
     </section>
 
     <!-- Sticker Book Button with Centered Content and Even Side Margins -->
@@ -246,7 +241,7 @@
     </div>
 
     <!-- Scripts -->
-    <script>
+    <script defer>
       const allStickers = {
         rabbit: "🐇",
         chicken: "🐔",
@@ -277,6 +272,35 @@
             }
             grid.appendChild(sticker);
           }
+        });
+
+      fetch("/Bath City Farm/Peter's-html/Content/Map.svg")
+        .then((response) => response.text())
+        .then((svgText) => {
+          const parser = new DOMParser();
+          const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
+          const svgElement = svgDoc.documentElement;
+
+          // Ensure pointer events are enabled on all elements in the SVG
+          svgElement.querySelectorAll("*").forEach((shape) => {
+            shape.style.pointerEvents = "all";
+          });
+
+          const container = document.getElementById("svg-container");
+          container.innerHTML = ""; // Clear container
+          container.appendChild(svgElement); // Insert real, parsed SVG
+
+          // Now attach events
+          const shapes = svgElement.querySelectorAll("circle, rect, ellipse");
+          shapes.forEach((shape) => {
+            shape.addEventListener("click", () => {
+              console.log(`Clicked: ${shape.id}`);
+              const link = shape.dataset.link || `${shape.id}.html`;
+              if (link) {
+                window.location.href = link;
+              }
+            });
+          });
         });
     </script>
 
