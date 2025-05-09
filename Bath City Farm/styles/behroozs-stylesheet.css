@@ -94,12 +94,11 @@
 }
 
 .landing-p-container{
-    display: flex;
-    justify-content: center;
-}
-.landing-p{
-    max-width: 70%;
     text-align: center;
+}
+#landing-header{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
 }
 
 #btn-container{
@@ -196,6 +195,11 @@
     #qr-placeholder{
         width: 25%;
     }
+    #map-btn{
+        width: 130px;
+        height: 50px;
+        border-radius: 20px;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -213,6 +217,12 @@
     }
     #carouselExampleIndicators{
         width: 45%;
+    }
+    #landing-header{
+        font-size: 2rem;
+    }
+    .landing-p{
+        font-size: 1.2rem;
     }
 }
 
@@ -235,5 +245,11 @@
     }
     #qr-placeholder{
         width: 20%;
+    }
+    #landing-header{
+        font-size: 2.5rem;
+    }
+    .landing-p{
+        font-size: 1.5rem;
     }
 }
