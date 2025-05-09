@@ -8,11 +8,138 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/Bath City Farm/styles/peters-styles.css" />
+    <link
+      rel="stylesheet"
+      href="/Bath City Farm/styles/peters-styles.css"
+    />
     <script
       src="https://kit.fontawesome.com/a2d9d5b63e.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      
+.sticker-book-body {
+    font-family: 'Nunito', sans-serif;
+    background: #fff7d4; /* Soft yellow background */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow around the modal */
+}
+
+.sticker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sticker-slot {
+    background: #fff4cc; /* Light yellow background for stickers */
+    padding: 20px;
+    border-radius: 16px; /* Rounded corners */
+    font-size: 32px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow to give a lifted effect */
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; /* Smooth transition */
+    cursor: pointer; /* Indicates that it's interactive */
+    overflow: hidden;
+}
+
+/* Sticker hover effects */
+.sticker-slot:hover {
+    transform: scale(1.1); /* Slightly enlarges the sticker */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+    background-color: #ffed85; /* Change background color on hover */
+}
+
+.sticker-slot.locked {
+    opacity: 0.4; /* Dim locked stickers */
+}
+
+.sticker-slot i {
+    transition: transform 0.2s;
+}
+
+/* Fun rotation effect when hovering on stickers */
+.sticker-slot:hover i {
+    transform: rotate(10deg); /* Slight rotation of the emoji on hover */
+}
+
+.label {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #444; /* Darker label color for contrast */
+    font-weight: bold;
+}
+
+/* Modal header styling */
+.modal-header {
+    background: #ff9900;
+    color: #fff;
+    border-radius: 16px 16px 0 0; /* Rounded top corners */
+    padding: 15px;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-header .btn-close {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Modal footer */
+.modal-footer {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Close button */
+.modal-footer .btn {
+    background-color: #ff9900;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 16px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.modal-footer .btn:hover {
+    background-color: #ff7f00;
+}
+
+/* Animation for unlocking stickers */
+/* Sticker click animation */
+.sticker-slot.clicked {
+    animation: bounce 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -28,7 +155,6 @@
 
     <!-- Map Section -->
     <section id="map-section" class="map-section">
-      <!-- Replace the image source with your dynamic/interactive map later -->
       <img
         src="map-placeholder.png"
         alt="Map Placeholder"
@@ -37,34 +163,81 @@
       />
     </section>
 
-    <!-- Achievements Section -->
-    <a href="home.html">
-      <section id="achievements-section" class="achievements-section">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <div>
-            <strong class="achievements-content">Achievements</strong><br />
-            <small class="achievements-content">Trials completed: 0/30</small>
+    <!-- Sticker Book Button with Centered Content and Even Side Margins -->
+    <div class="mx-3 mb-3">
+      <button
+        id="sticker-book-button"
+        class="btn w-100"
+        style="
+          background-color: #fff4cc;
+          border: none;
+          border-radius: 16px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          font-family: 'Comic Sans MS', cursive;
+          padding: 24px;
+          text-align: center;
+        "
+        data-bs-toggle="modal"
+        data-bs-target="#stickerBookModal"
+      >
+        <div
+          class="d-flex flex-column align-items-center justify-content-center"
+        >
+          <i class="fas fa-book fa-2x mb-2" style="color: #ff9900"></i>
+          <strong style="font-size: 1.4rem; color: #ff9900"
+            >Sticker Book</strong
+          >
+          <small style="color: #555">View your collected stickers!</small>
+        </div>
+      </button>
+    </div>
+
+    <!-- Sticker Book Modal -->
+    <div
+      class="modal fade"
+      id="stickerBookModal"
+      tabindex="-1"
+      aria-labelledby="stickerBookModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="stickerBookModalLabel">
+              🌟 My Sticker Book 🌟
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <i class="fas fa-trophy fa-lg"></i>
+          <div class="modal-body sticker-book-body">
+            <div class="sticker-grid" id="stickerGrid"></div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
-        <div class="progress">
-          <div
-            class="progress-bar progress-bar-custom"
-            role="progressbar"
-            style="width: 43%"
-            aria-valuenow="13"
-            aria-valuemin="0"
-            aria-valuemax="30"
-          ></div>
-        </div>
-      </section>
-    </a>
+      </div>
+    </div>
+
     <!-- Bottom Navigation -->
     <div class="bottom-image-nav">
       <a href="home.html">
-        <img src="/Bath City Farm/Peter's-html/Content/Map.png" alt="Home" />
+        <img
+          src="/Bath City Farm/Peter's-html/Content/Map.png"
+          alt="Home"
+        />
       </a>
-      <a href="QRScanner.html">
+      <a href="/Bath City Farm/qrCode/qr-scanner.html">
         <img
           src="/Bath City Farm/Peter's-html/Content/QR Code.png"
           alt="QR Code Scanner"
@@ -78,6 +251,42 @@
       </a>
     </div>
 
+    <!-- Scripts -->
+    <script>
+      const allStickers = {
+        'rabbit': '🐇',
+        'chicken': '🐔',
+        'pig': '🐷',
+        'cow': '🐮',
+        'duck': '🦆',
+        'sheep': '🐑'
+      };
+
+      document
+        .getElementById("stickerBookModal")
+        .addEventListener("show.bs.modal", () => {
+          const claimed =
+            JSON.parse(localStorage.getItem("claimedStickers")) || {};
+          const grid = document.getElementById("stickerGrid");
+          grid.innerHTML = ""; // Clear previous entries
+
+          for (const [key, emoji] of Object.entries(allStickers)) {
+            const sticker = document.createElement("div");
+            sticker.className = "sticker-slot";
+            if (!claimed[key]) {
+              sticker.classList.add("locked");
+              sticker.innerHTML = '❔<div class="label">Locked</div>';
+            } else {
+              sticker.innerHTML = `${emoji}<div class="label">${
+                key.charAt(0).toUpperCase() + key.slice(1)
+              }</div>`;
+            }
+            grid.appendChild(sticker);
+          }
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/Bath-City-Farm-Project/Achievements/qrCode/script.js"></script>
   </body>
 </html>
