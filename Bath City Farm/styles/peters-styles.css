@@ -65,3 +65,9 @@ a {
 #svg-container * {
   pointer-events: all !important;
 }
+
+.sticker-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

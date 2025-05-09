@@ -150,77 +150,81 @@
       </div>
     </div>
 
-    <!-- Map Section -->
-    <section id="map-section" class="map-section">
-      <div id="svg-container"></div>
-    </section>
+    <main>
+      <!-- Map Section -->
+      <section id="map-section" class="map-section">
+        <div id="svg-container"></div>
+      </section>
 
-    <!-- Sticker Book Button with Centered Content and Even Side Margins -->
-    <div class="mx-3 mb-3">
-      <button
-        id="sticker-book-button"
-        class="btn w-100"
-        style="
-          background-color: #fff4cc;
-          border: none;
-          border-radius: 16px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          font-family: 'Comic Sans MS', cursive;
-          padding: 24px;
-          text-align: center;
-        "
-        data-bs-toggle="modal"
-        data-bs-target="#stickerBookModal"
-      >
-        <div
-          class="d-flex flex-column align-items-center justify-content-center"
+      <!-- Sticker Book Button with Centered Content and Even Side Margins -->
+      <div class="mx-3 mb-3 sticker-button">
+        <button
+          id="sticker-book-button"
+          class="btn"
+          style="
+            position: fixed;
+            bottom: 10%;
+            width: 90%;
+            background-color: #fff4cc;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Comic Sans MS', cursive;
+            padding: 24px;
+            text-align: center;
+          "
+          data-bs-toggle="modal"
+          data-bs-target="#stickerBookModal"
         >
-          <i class="fas fa-book fa-2x mb-2" style="color: #ff9900"></i>
-          <strong style="font-size: 1.4rem; color: #ff9900"
-            >Sticker Book</strong
+          <div
+            class="d-flex flex-column align-items-center justify-content-center"
           >
-          <small style="color: #555">View your collected stickers!</small>
-        </div>
-      </button>
-    </div>
-
-    <!-- Sticker Book Modal -->
-    <div
-      class="modal fade"
-      id="stickerBookModal"
-      tabindex="-1"
-      aria-labelledby="stickerBookModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="stickerBookModalLabel">
-              🌟 My Sticker Book 🌟
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body sticker-book-body">
-            <div class="sticker-grid" id="stickerGrid"></div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
+            <i class="fas fa-book fa-2x mb-2" style="color: #ff9900"></i>
+            <strong style="font-size: 1.4rem; color: #ff9900"
+              >Sticker Book</strong
             >
-              Close
-            </button>
+            <small style="color: #555">View your collected stickers!</small>
+          </div>
+        </button>
+      </div>
+
+      <!-- Sticker Book Modal -->
+      <div
+        class="modal fade"
+        id="stickerBookModal"
+        tabindex="-1"
+        aria-labelledby="stickerBookModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="stickerBookModalLabel">
+                🌟 My Sticker Book 🌟
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body sticker-book-body">
+              <div class="sticker-grid" id="stickerGrid"></div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    </main>
     <!-- Bottom Navigation -->
     <div class="bottom-image-nav">
       <a href="home.html">
