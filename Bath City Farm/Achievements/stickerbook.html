@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Sticker Book</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #fff7d4;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ff9900;
+    }
+
+    .sticker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .sticker-slot {
+      background: #fff4cc;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 32px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .locked {
+      opacity: 0.3;
+    }
+
+    .label {
+      font-size: 12px;
+      margin-top: 5px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌟 My Sticker Book 🌟</h1>
+  <div class="sticker-grid" id="stickerGrid"></div>
+
+  <script>
+    const allStickers = {
+      'rabbit': '🐇',
+      'chicken': '🐔',
+      'pig': '🐷',
+      'plant': '🌻',
+      'cow': '🐮',
+      'carrot': '🥕',
+      'sheep': '🐑'
+    };
+
+    const claimed = JSON.parse(localStorage.getItem('claimedStickers')) || {};
+
+    const grid = document.getElementById("stickerGrid");
+
+    for (const [key, emoji] of Object.entries(allStickers)) {
+      const sticker = document.createElement('div');
+      sticker.className = 'sticker-slot';
+      if (!claimed[key]) {
+        sticker.classList.add('locked');
+        sticker.innerHTML = '❔<div class="label">Locked</div>';
+      } else {
+        sticker.innerHTML = `${emoji}<div class="label">${key.charAt(0).toUpperCase() + key.slice(1)}</div>`;
+      }
+      grid.appendChild(sticker);
+    }
+  </script>
+</body>
+</html>

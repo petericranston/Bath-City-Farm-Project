@@ -3,12 +3,18 @@
     justify-content: center;
 }
 
-.event-title{
+.page-title{
     font-size: 3rem;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
     margin: 20px;
     text-align: center;
+}
+
+#landing-title{
+    color: white;
+    text-decoration: underline 2px;
+    padding: 10px 0px;
 }
 
 #ongoing-header{
@@ -32,6 +38,16 @@
     margin-right: 5px;
 }
 
+#qr-image-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+#qr-placeholder{
+    width: 50%;
+}
+
 .card-title{
     font-size: 0.7rem;
 }
@@ -45,7 +61,7 @@
 }
 
 .green-header-container{
-    background-color:  #42b451;
+    background-color:  #2f6237;
 }
 
 .header-left{
@@ -74,6 +90,27 @@
 }
 #info-p-container-right{
     margin: 20px 20px 0px 20px;
+}
+
+.landing-p-container{
+    display: flex;
+    justify-content: center;
+}
+.landing-p{
+    max-width: 70%;
+    text-align: center;
+}
+
+#btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+#map-btn{
+    padding: 5px 10px 5px 10px;
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color: #ffc2b3;
 }
 
 .main-p{
@@ -126,7 +163,7 @@ Bootstrap is overwriting this and i need to find a fiz
 }
 
 @media (min-width: 1000px) {
-    .event-title{
+    .page-title{
         font-size: 4rem;
     }
     #ongoing-header{
@@ -147,7 +184,7 @@ Bootstrap is overwriting this and i need to find a fiz
 }
 
 @media (min-width: 1400px) {
-    .event-title{
+    .page-title{
         font-size: 4.5rem;
     }  
     .image-container{
