@@ -8,137 +8,134 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="/Bath City Farm/styles/peters-styles.css"
-    />
+    <link rel="stylesheet" href="/Bath City Farm/styles/peters-styles.css" />
     <script
       src="https://kit.fontawesome.com/a2d9d5b63e.js"
       crossorigin="anonymous"
     ></script>
     <style>
-      
-.sticker-book-body {
-    font-family: 'Nunito', sans-serif;
-    background: #fff7d4; /* Soft yellow background */
-    color: #333;
-    text-align: center;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow around the modal */
-}
+      .sticker-book-body {
+        font-family: "Nunito", sans-serif;
+        background: #fff7d4; /* Soft yellow background */
+        color: #333;
+        text-align: center;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow around the modal */
+      }
 
-.sticker-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive grid layout */
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
+      .sticker-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(100px, 1fr)
+        ); /* Responsive grid layout */
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
 
-.sticker-slot {
-    background: #fff4cc; /* Light yellow background for stickers */
-    padding: 20px;
-    border-radius: 16px; /* Rounded corners */
-    font-size: 32px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow to give a lifted effect */
-    position: relative;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; /* Smooth transition */
-    cursor: pointer; /* Indicates that it's interactive */
-    overflow: hidden;
-}
+      .sticker-slot {
+        background: #fff4cc; /* Light yellow background for stickers */
+        padding: 20px;
+        border-radius: 16px; /* Rounded corners */
+        font-size: 32px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow to give a lifted effect */
+        position: relative;
+        transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; /* Smooth transition */
+        cursor: pointer; /* Indicates that it's interactive */
+        overflow: hidden;
+      }
 
-/* Sticker hover effects */
-.sticker-slot:hover {
-    transform: scale(1.1); /* Slightly enlarges the sticker */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
-    background-color: #ffed85; /* Change background color on hover */
-}
+      /* Sticker hover effects */
+      .sticker-slot:hover {
+        transform: scale(1.1); /* Slightly enlarges the sticker */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+        background-color: #ffed85; /* Change background color on hover */
+      }
 
-.sticker-slot.locked {
-    opacity: 0.4; /* Dim locked stickers */
-}
+      .sticker-slot.locked {
+        opacity: 0.4; /* Dim locked stickers */
+      }
 
-.sticker-slot i {
-    transition: transform 0.2s;
-}
+      .sticker-slot i {
+        transition: transform 0.2s;
+      }
 
-/* Fun rotation effect when hovering on stickers */
-.sticker-slot:hover i {
-    transform: rotate(10deg); /* Slight rotation of the emoji on hover */
-}
+      /* Fun rotation effect when hovering on stickers */
+      .sticker-slot:hover i {
+        transform: rotate(10deg); /* Slight rotation of the emoji on hover */
+      }
 
-.label {
-    font-size: 14px;
-    margin-top: 10px;
-    color: #444; /* Darker label color for contrast */
-    font-weight: bold;
-}
+      .label {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #444; /* Darker label color for contrast */
+        font-weight: bold;
+      }
 
-/* Modal header styling */
-.modal-header {
-    background: #ff9900;
-    color: #fff;
-    border-radius: 16px 16px 0 0; /* Rounded top corners */
-    padding: 15px;
-}
+      /* Modal header styling */
+      .modal-header {
+        background: #ff9900;
+        color: #fff;
+        border-radius: 16px 16px 0 0; /* Rounded top corners */
+        padding: 15px;
+      }
 
-.modal-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-align: center;
-}
+      .modal-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+      }
 
-.modal-header .btn-close {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-}
+      .modal-header .btn-close {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+      }
 
-/* Modal footer */
-.modal-footer {
-    border-top: 1px solid #ddd;
-    padding: 10px;
-    justify-content: center;
-}
+      /* Modal footer */
+      .modal-footer {
+        border-top: 1px solid #ddd;
+        padding: 10px;
+        justify-content: center;
+      }
 
-/* Close button */
-.modal-footer .btn {
-    background-color: #ff9900;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 16px;
-    font-size: 1rem;
-    color: white;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
+      /* Close button */
+      .modal-footer .btn {
+        background-color: #ff9900;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 16px;
+        font-size: 1rem;
+        color: white;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
 
-.modal-footer .btn:hover {
-    background-color: #ff7f00;
-}
+      .modal-footer .btn:hover {
+        background-color: #ff7f00;
+      }
 
-/* Animation for unlocking stickers */
-/* Sticker click animation */
-.sticker-slot.clicked {
-    animation: bounce 0.3s ease-in-out;
-}
+      /* Animation for unlocking stickers */
+      /* Sticker click animation */
+      .sticker-slot.clicked {
+        animation: bounce 0.3s ease-in-out;
+      }
 
-@keyframes bounce {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-
+      @keyframes bounce {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
     </style>
   </head>
   <body>
@@ -153,89 +150,83 @@
       </div>
     </div>
 
-    <!-- Map Section -->
-    <section id="map-section" class="map-section">
-      <img
-        src="map-placeholder.png"
-        alt="Map Placeholder"
-        class="img-fluid"
-        style="max-width: 90%; height: auto"
-      />
-    </section>
+    <main>
+      <!-- Map Section -->
+      <div id="svg-container"></div>
 
-    <!-- Sticker Book Button with Centered Content and Even Side Margins -->
-    <div class="mx-3 mb-3">
-      <button
-        id="sticker-book-button"
-        class="btn w-100"
-        style="
-          background-color: #fff4cc;
-          border: none;
-          border-radius: 16px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          font-family: 'Comic Sans MS', cursive;
-          padding: 24px;
-          text-align: center;
-        "
-        data-bs-toggle="modal"
-        data-bs-target="#stickerBookModal"
-      >
-        <div
-          class="d-flex flex-column align-items-center justify-content-center"
+      <!-- Sticker Book Button with Centered Content and Even Side Margins -->
+      <div class="mx-3 mb-3 sticker-button">
+        <button
+          id="sticker-book-button"
+          class="btn"
+          style="
+            position: fixed;
+            bottom: 10%;
+            width: 90%;
+            background-color: #fff4cc;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Comic Sans MS', cursive;
+            padding: 24px;
+            text-align: center;
+          "
+          data-bs-toggle="modal"
+          data-bs-target="#stickerBookModal"
         >
-          <i class="fas fa-book fa-2x mb-2" style="color: #ff9900"></i>
-          <strong style="font-size: 1.4rem; color: #ff9900"
-            >Sticker Book</strong
+          <div
+            class="d-flex flex-column align-items-center justify-content-center"
           >
-          <small style="color: #555">View your collected stickers!</small>
-        </div>
-      </button>
-    </div>
-
-    <!-- Sticker Book Modal -->
-    <div
-      class="modal fade"
-      id="stickerBookModal"
-      tabindex="-1"
-      aria-labelledby="stickerBookModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="stickerBookModalLabel">
-              🌟 My Sticker Book 🌟
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body sticker-book-body">
-            <div class="sticker-grid" id="stickerGrid"></div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
+            <i class="fas fa-book fa-2x mb-2" style="color: #ff9900"></i>
+            <strong style="font-size: 1.4rem; color: #ff9900"
+              >Sticker Book</strong
             >
-              Close
-            </button>
+            <small style="color: #555">View your collected stickers!</small>
+          </div>
+        </button>
+      </div>
+
+      <!-- Sticker Book Modal -->
+      <div
+        class="modal fade"
+        id="stickerBookModal"
+        tabindex="-1"
+        aria-labelledby="stickerBookModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="stickerBookModalLabel">
+                🌟 My Sticker Book 🌟
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body sticker-book-body">
+              <div class="sticker-grid" id="stickerGrid"></div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    </main>
     <!-- Bottom Navigation -->
     <div class="bottom-image-nav">
       <a href="home.html">
-        <img
-          src="/Bath City Farm/Peter's-html/Content/Map.png"
-          alt="Home"
-        />
+        <img src="/Bath City Farm/Peter's-html/Content/Map.png" alt="Home" />
       </a>
       <a href="/Bath City Farm/qrCode/qr-scanner.html">
         <img
@@ -252,14 +243,14 @@
     </div>
 
     <!-- Scripts -->
-    <script>
+    <script defer>
       const allStickers = {
-        'rabbit': '🐇',
-        'chicken': '🐔',
-        'pig': '🐷',
-        'cow': '🐮',
-        'duck': '🦆',
-        'sheep': '🐑'
+        rabbit: "🐇",
+        chicken: "🐔",
+        pig: "🐷",
+        cow: "🐮",
+        duck: "🦆",
+        sheep: "🐑",
       };
 
       document
@@ -283,6 +274,35 @@
             }
             grid.appendChild(sticker);
           }
+        });
+
+      fetch("/Bath City Farm/Peter's-html/Content/Map.svg")
+        .then((response) => response.text())
+        .then((svgText) => {
+          const parser = new DOMParser();
+          const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
+          const svgElement = svgDoc.documentElement;
+
+          // Ensure pointer events are enabled on all elements in the SVG
+          svgElement.querySelectorAll("*").forEach((shape) => {
+            shape.style.pointerEvents = "all";
+          });
+
+          const container = document.getElementById("svg-container");
+          container.innerHTML = ""; // Clear container
+          container.appendChild(svgElement); // Insert real, parsed SVG
+
+          // Now attach events
+          const shapes = svgElement.querySelectorAll("circle, rect, ellipse");
+          shapes.forEach((shape) => {
+            shape.addEventListener("click", () => {
+              console.log(`Clicked: ${shape.id}`);
+              const link = shape.dataset.link || `${shape.id}.html`;
+              if (link) {
+                window.location.href = link;
+              }
+            });
+          });
         });
     </script>
 

@@ -74,3 +74,16 @@ body {
 .quizTitle {
   margin-top: 60px;
 }
+
+.close-button {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: #ff4d4d;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 0 12px;
+  line-height: 1.2;
+}
