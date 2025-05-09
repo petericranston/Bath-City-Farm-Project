@@ -41,7 +41,7 @@
 #qr-image-container{
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 #qr-placeholder{
@@ -181,6 +181,9 @@ Bootstrap is overwriting this and i need to find a fiz
     .carousel-size{
         width: 60%;
     }
+    #qr-placeholder{
+        width: 25%;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -204,5 +207,8 @@ Bootstrap is overwriting this and i need to find a fiz
     }
     .carousel-size{
         width: 40%;
+    }
+    #qr-placeholder{
+        width: 20%;
     }
 }
