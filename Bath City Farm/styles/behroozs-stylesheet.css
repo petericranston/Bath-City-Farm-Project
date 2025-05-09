@@ -34,7 +34,7 @@
 }
 
 .image-container{
-    width: 30%;
+    width: 40%;
     margin-right: 5px;
 }
 
@@ -49,15 +49,16 @@
 }
 
 .card-title{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 .card-body{
     display: flex;
+    height: 85px;
 }
 
 .card-p{
-    font-size: 0.5rem;
+    font-size: 0.6rem;
 }
 
 .green-header-container{
@@ -83,10 +84,10 @@
 }
 
 #projects-p-container{
-    margin: 20px 0px 0px 20px;
+    margin: 20px 20px 0px 20px;
 }
 #info-p-container-left{
-    margin: 20px 0px 0px 20px;
+    margin: 20px 20px 0px 20px;
 }
 #info-p-container-right{
     margin: 20px 20px 0px 20px;
@@ -136,11 +137,17 @@ Bootstrap is overwriting this and i need to find a fiz
 }
 
 @media (min-width: 721px) {
+    .card-body{
+        height: 110px;
+    }
     .card-title{
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
     .card-p{
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+    .image-container{
+        width: 21%;
     }
     #ongoing-header{
         font-size: 2.5rem; 
@@ -176,7 +183,7 @@ Bootstrap is overwriting this and i need to find a fiz
         font-size: 3rem;
     }
     .image-container{
-        width: 20%;
+        width: 16%;
     }
     .carousel-size{
         width: 60%;
@@ -190,8 +197,14 @@ Bootstrap is overwriting this and i need to find a fiz
     .page-title{
         font-size: 4.5rem;
     }  
+    .card-title{
+        font-size: 1.5rem;
+    }
+    .card-p{
+        font-size: 1rem;
+    }
     .image-container{
-        width: 15%;
+        width: 12%;
     }
     .carousel-size{
         width: 50%;
@@ -199,11 +212,17 @@ Bootstrap is overwriting this and i need to find a fiz
 }
 
 @media (min-width: 1800px) {
+    .card-body{
+        height: 130px;
+    }
     .card-title{
-        font-size: 2rem;
+        font-size: 1.7rem;
     }  
     .card-p{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+    .image-container{
+        width: 11%;
     }
     .carousel-size{
         width: 40%;
