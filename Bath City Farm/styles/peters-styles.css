@@ -57,3 +57,21 @@ body {
 a {
   text-decoration: none;
 }
+
+.sticker-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#svg-container {
+  pointer-events: auto;
+}
+#svg-container * {
+  pointer-events: all !important;
+}
+#svg-container circle,
+#svg-container rect,
+#svg-container ellipse {
+  cursor: pointer;
+}

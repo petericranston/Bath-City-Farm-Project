@@ -17,6 +17,9 @@
   <body>
     <!-- Page Title -->
     <div class="top-header">🐑 Sheep at the Farm</div>
+    <a href="index.html" class="close-button" aria-label="Close Page"
+      >&times;</a
+    >
 
     <div class="content-container">
       <div class="bubble bubble-blue text-center">
@@ -226,112 +229,129 @@
         </div>
       </div>
 
-       <!-- Action Buttons -->
-       <div class="text-center mt-4">
-        <button class="btn btn-success btn-lg" onclick="checkAnswers()">✅ Check My Answers</button>
-        <button id="retryBtn" class="btn btn-warning btn-lg d-none mt-2" onclick="resetQuiz()">🔁 Try Again</button>
+        <!-- Action Buttons -->
+        <div class="text-center mt-4">
+          <button class="btn btn-success btn-lg" onclick="checkAnswers()">
+            ✅ Check My Answers
+          </button>
+          <button
+            id="retryBtn"
+            class="btn btn-warning btn-lg d-none mt-2"
+            onclick="resetQuiz()"
+          >
+            🔁 Try Again
+          </button>
+        </div>
+
+        <!-- Score + Sticker Button -->
+        <div
+          id="quiz-score"
+          class="bubble bubble-yellow mt-4 text-center d-none"
+        >
+          <h4 id="score-message"></h4>
+          <p>🌟 Great job learning about Sheep!</p>
+        </div>
+
+        <div id="sticker-button" class="text-center mt-4 d-none">
+          <button
+            class="btn btn-primary btn-lg"
+            onclick="claimSticker('sheep')"
+          >
+            Collect Sheep Sticker
+          </button>
+        </div>
       </div>
+    </main>
 
-      <!-- Score + Sticker Button -->
-      <div id="quiz-score" class="bubble bubble-yellow mt-4 text-center d-none">
-        <h4 id="score-message"></h4>
-        <p>🌟 Great job learning about Sheep!</p>
-      </div>
+    <!-- Scripts -->
+    <script>
+      function checkAnswers() {
+        const questions = ["q1", "q2", "q3", "q4"];
+        let score = 0;
 
-      <div id="sticker-button" class="text-center mt-4 d-none">
-        <button class="btn btn-primary btn-lg" onclick="claimSticker('sheep')">Collect Sheep Sticker</button>
-      </div>
-    </div>
-  </main>
+        questions.forEach((q) => {
+          const radios = document.getElementsByName(q);
+          radios.forEach((radio) => {
+            const label = radio.nextElementSibling;
+            const feedback = label.querySelector(".feedback");
+            feedback.textContent = ""; // reset
 
-  <!-- Scripts -->
-  <script>
-    function checkAnswers() {
-      const questions = ["q1", "q2", "q3", "q4"];
-      let score = 0;
-
-      questions.forEach((q) => {
-        const radios = document.getElementsByName(q);
-        radios.forEach((radio) => {
-          const label = radio.nextElementSibling;
-          const feedback = label.querySelector(".feedback");
-          feedback.textContent = ""; // reset
-
-          if (radio.checked) {
-            if (radio.value === "correct") {
-              feedback.textContent = " ✅ Correct!";
-              feedback.style.color = "green";
-              score++;
-            } else {
-              feedback.textContent = " ❌ Oops!";
-              feedback.style.color = "red";
+            if (radio.checked) {
+              if (radio.value === "correct") {
+                feedback.textContent = " ✅ Correct!";
+                feedback.style.color = "green";
+                score++;
+              } else {
+                feedback.textContent = " ❌ Oops!";
+                feedback.style.color = "red";
+              }
+              feedback.style.fontWeight = "bold";
             }
-            feedback.style.fontWeight = "bold";
-          }
+          });
         });
-      });
 
-      const scoreBox = document.getElementById("quiz-score");
-      const message = document.getElementById("score-message");
-      scoreBox.classList.remove("d-none");
+        const scoreBox = document.getElementById("quiz-score");
+        const message = document.getElementById("score-message");
+        scoreBox.classList.remove("d-none");
 
-      const stickerBtn = document.getElementById("sticker-button");
-      const retryBtn = document.getElementById("retryBtn");
+        const stickerBtn = document.getElementById("sticker-button");
+        const retryBtn = document.getElementById("retryBtn");
 
-      if (score === 4) {
-        message.innerHTML = `🎉 Perfect! You got all <strong>4 out of 4</strong> correct!`;
-        stickerBtn.classList.remove("d-none");
-        retryBtn.classList.add("d-none");
-      } else {
-        message.innerHTML = `Oops! You got <strong>${score} out of 4</strong>. Try again to collect the sticker!`;
-        retryBtn.classList.remove("d-none");
-        stickerBtn.classList.add("d-none");
-      }
-    }
-
-    function resetQuiz() {
-      const questions = ["q1", "q2", "q3", "q4"];
-      questions.forEach((q) => {
-        document.getElementsByName(q).forEach((radio) => {
-          radio.checked = false;
-          const feedback = radio.nextElementSibling.querySelector(".feedback");
-          if (feedback) {
-            feedback.textContent = "";
-          }
-        });
-      });
-
-      document.getElementById("quiz-score").classList.add("d-none");
-      document.getElementById("sticker-button").classList.add("d-none");
-      document.getElementById("retryBtn").classList.add("d-none");
-    }
-
-    function claimSticker(pageKey) {
-      const stickerMap = {
-        'rabbit': '🐇',
-        'chicken': '🐔',
-        'pig': '🐷',
-        'cow': '🐮',
-        'duck': '🦆',
-        'sheep': '🐑'
-      };
-
-      let stickers = JSON.parse(localStorage.getItem('stickers')) || [];
-      let claimed = JSON.parse(localStorage.getItem('claimedStickers')) || {};
-
-      if (claimed[pageKey]) {
-        alert("You already collected this sticker!");
-        return;
+        if (score === 4) {
+          message.innerHTML = `🎉 Perfect! You got all <strong>4 out of 4</strong> correct!`;
+          stickerBtn.classList.remove("d-none");
+          retryBtn.classList.add("d-none");
+        } else {
+          message.innerHTML = `Oops! You got <strong>${score} out of 4</strong>. Try again to collect the sticker!`;
+          retryBtn.classList.remove("d-none");
+          stickerBtn.classList.add("d-none");
+        }
       }
 
-      const newSticker = stickerMap[pageKey];
-      stickers.push(newSticker);
-      claimed[pageKey] = true;
+      function resetQuiz() {
+        const questions = ["q1", "q2", "q3", "q4"];
+        questions.forEach((q) => {
+          document.getElementsByName(q).forEach((radio) => {
+            radio.checked = false;
+            const feedback =
+              radio.nextElementSibling.querySelector(".feedback");
+            if (feedback) {
+              feedback.textContent = "";
+            }
+          });
+        });
 
-      localStorage.setItem('stickers', JSON.stringify(stickers));
-      localStorage.setItem('claimedStickers', JSON.stringify(claimed));
-      alert(`Yay! You collected the ${newSticker} sticker!`);
-    }
+        document.getElementById("quiz-score").classList.add("d-none");
+        document.getElementById("sticker-button").classList.add("d-none");
+        document.getElementById("retryBtn").classList.add("d-none");
+      }
+
+      function claimSticker(pageKey) {
+        const stickerMap = {
+          rabbit: "🐇",
+          chicken: "🐔",
+          pig: "🐷",
+          cow: "🐮",
+          duck: "🦆",
+          sheep: "🐑",
+        };
+
+        let stickers = JSON.parse(localStorage.getItem("stickers")) || [];
+        let claimed = JSON.parse(localStorage.getItem("claimedStickers")) || {};
+
+        if (claimed[pageKey]) {
+          alert("You already collected this sticker!");
+          return;
+        }
+
+        const newSticker = stickerMap[pageKey];
+        stickers.push(newSticker);
+        claimed[pageKey] = true;
+
+        localStorage.setItem("stickers", JSON.stringify(stickers));
+        localStorage.setItem("claimedStickers", JSON.stringify(claimed));
+        alert(`Yay! You collected the ${newSticker} sticker!`);
+      }
     </script>
   </body>
 </html>
