@@ -1,78 +1,74 @@
 body {
-  background-color: white;
+  background-color: #f5f5f5; /* Soft gray background for contrast */
+  font-family: "Nunito", sans-serif;
 }
-.weather-header {
-  background-color: #2f6237;
-  color: white;
-  padding: 10px 20px;
+
+.app-header {
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
+  color: #fff;
+  padding: 15px 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.weather-info {
-  line-height: 1.2;
+
+.app-title {
+  font-size: 1.6rem;
 }
+
 .hamburger {
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.map-section {
-  text-align: center;
-  padding: 20px 0;
-}
-.achievements-section {
-  border-top: 1px solid #ccc;
-  padding: 20px;
-}
-.progress {
-  height: 15px;
-}
-.progress-bar-custom {
-  background-color: #db6f6f;
+  font-size: 1.8rem;
 }
 
-.bottom-image-nav {
+.sticker-button button {
   position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  z-index: 1000;
+  bottom: 10%;
+  width: 90%;
+  background-color: #ffcc00; /* Bright yellow for visibility */
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Comic Sans MS", cursive;
+  padding: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
 }
 
-.bottom-image-nav img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 3px;
+.sticker-button button:hover {
+  background-color: #f76c6c; /* Slight color change on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.achievements-content {
-  color: black;
+.sticker-book-body {
+  background: #fff4cc;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-a {
-  text-decoration: none;
+.sticker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
-.sticker-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#svg-container {
-  pointer-events: auto;
-}
-#svg-container * {
-  pointer-events: all !important;
-}
-#svg-container circle,
-#svg-container rect,
-#svg-container ellipse {
+.sticker-slot {
+  background: #fffbee;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 28px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
 
