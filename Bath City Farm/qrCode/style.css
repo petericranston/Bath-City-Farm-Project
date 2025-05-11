@@ -1,100 +1,90 @@
-/* Import a modern, friendly font */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+/* Updated Playful & Accessible QR Scanner Styling */
 
 body {
-  font-family: "Nunito", sans-serif;
-  display: flex;
-  justify-content: center;
   margin: 0;
   padding: 0;
   height: 100vh;
-  box-sizing: border-box;
-  text-align: center;
-  background: rgb(128 0 0 / 66%);
+  background: linear-gradient(to bottom right, #ffcc70, #ff9e80);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container {
-  width: 100%;
-  max-width: 500px;
-  margin: 5px;
-}
+/* .container {
+  width: 90%;
+  max-width: 400px;
+  background-color: #fffbec;
+  padding: 20px;
+  border-radius: 1em;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+} */
 
 .container h1 {
-  color: #ff7979;
-  font-weight: 700;
-  font-size: 2rem;
+  color: #ff6f00;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
 }
 
-/* Remove the white box background */
 .section {
-  background-color: transparent; /* Changed from #ffffff */
-  padding: 20px 10px;
-  border: none;
-  box-shadow: none;
+  padding: 16px;
 }
 
-/* Remove white background and border from QR reader */
 #my-qr-reader {
-  background-color: transparent !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
+  padding: 12px !important;
+background-color: #fffaf0;
+  border: 2px dashed #ffa500 !important; 
+  border-radius: 12px;
 }
+.section {
+  background-color: #fffbec;
+  padding: 20px 15px; /* reduced padding */
+  border: 1px solid #ffe4b5; /* thinner, softer border */
+  border-radius: 1em;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* lighter shadow */
+}
+
 
 #my-qr-reader img[alt="Info icon"] {
   display: none;
 }
 
 #my-qr-reader img[alt="Camera based scan"] {
-  width: 100px !important;
-  height: 100px !important;
+  width: 72px !important;
+  height: 72px !important;
 }
 
 button {
-  padding: 10px 20px;
-  border: 1px solid #b2b2b2;
-  outline: none;
-  border-radius: 0.25em;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 1.5em;
   color: white;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  background-color: #008000ad;
-  transition: 0.3s background-color;
+  background: linear-gradient(to right, #00b894, #00cec9);
+  margin-top: 20px;
+  transition: transform 0.2s, background 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 button:hover {
-  background-color: #008000;
+  background: linear-gradient(to right, #00cec9, #00b894);
+  transform: scale(1.05);
 }
 
 #html5-qrcode-anchor-scan-type-change {
   text-decoration: none !important;
-  color: #1d9bf0;
+  color: #ff6600;
+  font-weight: bold;
 }
 
 video {
   width: 100% !important;
-  border: none !important; /* Removed border */
-  border-radius: 0.5em; /* Slightly larger rounding */
+  height: auto !important;
+  border: none !important;
+  border-radius: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.bottom-image-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  z-index: 1000;
-}
-
-.bottom-image-nav img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 3px;
-}
