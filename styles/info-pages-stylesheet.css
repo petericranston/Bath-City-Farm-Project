@@ -4,6 +4,14 @@ body {
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
 .top-header {
   background-color: #2f6237;
   color: white;
@@ -13,14 +21,6 @@ body {
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 20px;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
 }
 
 .content-container {
