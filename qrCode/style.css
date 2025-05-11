@@ -33,8 +33,8 @@ body {
 
 #my-qr-reader {
   padding: 12px !important;
-background-color: #fffaf0;
-  border: 2px dashed #ffa500 !important; 
+  background-color: #fffaf0;
+  border: 2px dashed #ffa500 !important;
   border-radius: 12px;
 }
 .section {
@@ -44,7 +44,6 @@ background-color: #fffaf0;
   border-radius: 1em;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* lighter shadow */
 }
-
 
 #my-qr-reader img[alt="Info icon"] {
   display: none;
@@ -88,3 +87,21 @@ video {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.bottom-image-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.bottom-image-nav img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 3px;
+}
