@@ -23,6 +23,10 @@ header {
   margin-bottom: 20px;
 }
 
+main {
+  margin-top: 60px;
+}
+
 .content-container {
   padding: 20px;
 }
