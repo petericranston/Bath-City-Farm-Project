@@ -17,16 +17,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
+
   <body>
+    <!-- Header -->
     <div class="app-header">
       <div class="app-title">Bath City Farm Trail</div>
-      <div class="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
+      <div class="hamburger"><i class="fas fa-bars"></i></div>
     </div>
 
     <main>
-      <!-- Map Section -->
       <div id="svg-container"></div>
 
       <!-- Sticker Book Button -->
@@ -50,13 +49,9 @@
           data-bs-toggle="modal"
           data-bs-target="#stickerBookModal"
         >
-          <div
-            class="d-flex flex-column align-items-center justify-content-center"
-          >
+          <div class="d-flex flex-column align-items-center justify-content-center">
             <i class="fas fa-book fa-2x mb-2" style="color: #ff9900"></i>
-            <strong style="font-size: 1.4rem; color: #ff9900"
-              >Sticker Book</strong
-            >
+            <strong style="font-size: 1.4rem; color: #ff9900">Sticker Book</strong>
             <small style="color: #555">View your collected stickers!</small>
           </div>
         </button>
@@ -71,17 +66,12 @@
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content" style="border-radius: 16px">
+          <div class="modal-content" style="border-radius: 16px; background-color: #ffcc00;">
             <div
               class="modal-header"
-              style="
-                border-top-left-radius: 16px;
-                border-top-right-radius: 16px;
-              "
+              style="border-top-left-radius: 16px; border-top-right-radius: 16px; background-color: #fbbf24; color: white;"
             >
-              <h5 class="modal-title" id="stickerBookModalLabel">
-                🌟 My Sticker Book 🌟
-              </h5>
+              <h5 class="modal-title" id="stickerBookModalLabel">My Sticker Book</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -91,15 +81,6 @@
             </div>
             <div class="modal-body sticker-book-body">
               <div class="sticker-grid" id="stickerGrid"></div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
             </div>
           </div>
         </div>
@@ -136,164 +117,61 @@
       </a>
     </div>
 
-    <script defer>
-      const allStickers = {
-        rabbit: "🐇",
-        chicken: "🐔",
-        pig: "🐷",
-        cow: "🐮",
-        duck: "🦆",
-        sheep: "🐑",
-      };
-
+    <!-- Sticker Modal Script -->
+    <script>
       document
         .getElementById("stickerBookModal")
         .addEventListener("show.bs.modal", () => {
-          const claimed =
-            JSON.parse(localStorage.getItem("claimedStickers")) || {};
+          const claimed = JSON.parse(localStorage.getItem("claimedStickers")) || {};
           const grid = document.getElementById("stickerGrid");
           grid.innerHTML = "";
 
-          for (const [key, emoji] of Object.entries(allStickers)) {
+          for (const [key, emoji] of Object.entries({
+            rabbit: "🐇",
+            chicken: "🐔",
+            pig: "🐷",
+            cow: "🐮",
+            duck: "🦆",
+            sheep: "🐑",
+          })) {
             const sticker = document.createElement("div");
             sticker.className = "sticker-slot";
+            const stickerEmoji = document.createElement("span");
+            stickerEmoji.className = "sticker-emoji";
+            stickerEmoji.innerHTML = emoji;
+
+            const label = document.createElement("div");
+            label.className = "label";
+            label.innerText = key.charAt(0).toUpperCase() + key.slice(1);
+
+            sticker.appendChild(stickerEmoji);
+            sticker.appendChild(label);
+
             if (!claimed[key]) {
-              sticker.classList.add("locked");
-              sticker.innerHTML = '❔<div class="label">Locked</div>';
-            } else {
-              sticker.innerHTML = `${emoji}<div class="label">${
-                key.charAt(0).toUpperCase() + key.slice(1)
-              }</div>`;
-            }
+  sticker.classList.add("locked");
+  label.innerText = "Locked";
+} else {
+  sticker.addEventListener("click", () => {
+    // Deselect all other stickers
+    document.querySelectorAll(".sticker-slot.selected").forEach(el => {
+      el.classList.remove("selected");
+    });
+
+    // Select current sticker
+    sticker.classList.add("selected");
+  });
+}
+
+
             grid.appendChild(sticker);
           }
         });
-
-      fetch("/Bath-City-Farm-Project/HomePage-InfoPages/Content/Map.svg")
-        .then((response) => response.text())
-        .then((svgText) => {
-          const parser = new DOMParser();
-          const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
-          const svg = svgDoc.documentElement;
-
-          // Wrap everything inside a group element <g> to apply transforms
-          const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-          while (svg.firstChild) {
-            g.appendChild(svg.firstChild);
-          }
-          svg.appendChild(g);
-
-          svg.setAttribute("width", "100%");
-          svg.setAttribute("height", "100%");
-          svg.style.touchAction = "none"; // Prevent default gestures
-
-          // Add SVG to page
-          const container = document.getElementById("svg-container");
-          container.innerHTML = "";
-          container.appendChild(svg);
-
-          let zoom = 1;
-          let panX = 0;
-          let panY = 0;
-          let isPanning = false;
-          let startX, startY;
-
-          const updateTransform = () => {
-            g.setAttribute(
-              "transform",
-              `translate(${panX}, ${panY}) scale(${zoom})`
-            );
-          };
-
-          // Mouse Wheel Zooming
-          svg.addEventListener("wheel", (e) => {
-            e.preventDefault();
-            const rect = svg.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const mouseY = e.clientY - rect.top;
-
-            const delta = -e.deltaY * 0.001; // invert scroll direction
-            const newZoom = Math.min(Math.max(zoom * (1 + delta), 0.5), 10); // clamp zoom
-
-            // Translate to zoom in toward cursor
-            const zoomRatio = newZoom / zoom;
-            panX -= (mouseX - panX) * (zoomRatio - 1);
-            panY -= (mouseY - panY) * (zoomRatio - 1);
-
-            zoom = newZoom;
-            updateTransform();
-          });
-
-          // Mouse Dragging (Panning)
-          svg.addEventListener("mousedown", (e) => {
-            isPanning = true;
-            startX = e.clientX - panX;
-            startY = e.clientY - panY;
-          });
-
-          window.addEventListener("mousemove", (e) => {
-            if (!isPanning) return;
-            panX = e.clientX - startX;
-            panY = e.clientY - startY;
-            updateTransform();
-          });
-
-          window.addEventListener("mouseup", () => {
-            isPanning = false;
-          });
-
-          // Touch: Panning and Pinch Zoom
-          let touchStartDist = 0;
-          let lastZoom = zoom;
-
-          const getTouchDistance = (touches) => {
-            const dx = touches[0].clientX - touches[1].clientX;
-            const dy = touches[0].clientY - touches[1].clientY;
-            return Math.sqrt(dx * dx + dy * dy);
-          };
-
-          svg.addEventListener("touchstart", (e) => {
-            if (e.touches.length === 1) {
-              startX = e.touches[0].clientX - panX;
-              startY = e.touches[0].clientY - panY;
-            } else if (e.touches.length === 2) {
-              touchStartDist = getTouchDistance(e.touches);
-              lastZoom = zoom;
-            }
-          });
-
-          svg.addEventListener(
-            "touchmove",
-            (e) => {
-              e.preventDefault();
-              if (e.touches.length === 1) {
-                panX = e.touches[0].clientX - startX;
-                panY = e.touches[0].clientY - startY;
-              } else if (e.touches.length === 2) {
-                const newDist = getTouchDistance(e.touches);
-                const pinchRatio = newDist / touchStartDist;
-                zoom = Math.min(Math.max(lastZoom * pinchRatio, 0.5), 10);
-              }
-              updateTransform();
-            },
-            { passive: false }
-          );
-
-          // Click interactivity
-          g.querySelectorAll(
-            "circle, rect, ellipse, path, polygon, polyline"
-          ).forEach((shape) => {
-            shape.style.pointerEvents = "all";
-            shape.addEventListener("click", (e) => {
-              e.stopPropagation();
-              const link = shape.dataset.link || `${shape.id}.html`;
-              if (link) window.location.href = link;
-            });
-          });
-        });
     </script>
 
+    <!-- Bootstrap JS & Project Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/Bath-City-Farm-Project/Achievements/qrCode/script.js"></script>
   </body>
 </html>
+
+
