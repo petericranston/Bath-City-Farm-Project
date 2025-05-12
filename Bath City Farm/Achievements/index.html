@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chicken Info</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>🐔 All About Chickens!</h1>
+    <p>
+      Chickens are friendly farm animals that lay eggs. They love to peck the
+      ground and cluck all day.
+    </p>
+
+    <!-- Sticker Button -->
+    <button onclick="claimSticker('chicken')">Collect Chicken Sticker</button>
+
+    <script>
+      function claimSticker(pageKey) {
+        const stickerMap = {
+          chicken: "🐔",
+          pig: "🐷",
+          sheep: "🌻",
+          cow: "🐮",
+          carrot: "🥕",
+          sheep: "🐑",
+        };
+
+        let stickers = JSON.parse(localStorage.getItem("stickers")) || [];
+        let claimed = JSON.parse(localStorage.getItem("claimedStickers")) || {};
+
+        if (claimed[pageKey]) {
+          alert("You already collected this sticker!");
+          return;
+        }
+
+        const newSticker = stickerMap[pageKey];
+        stickers.push(newSticker);
+        claimed[pageKey] = true;
+
+        localStorage.setItem("stickers", JSON.stringify(stickers));
+        localStorage.setItem("claimedStickers", JSON.stringify(claimed));
+        alert(`Yay! You collected the ${newSticker} sticker!`);
+      }
+    </script>
+  </body>
+</html>
