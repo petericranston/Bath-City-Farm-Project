@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:HomePage-InfoPages/Content/Map.svg
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 27.9.6, SVG Export Plug-In . SVG Version: 9.03 Build 54986)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -18,3 +19,25 @@
 	<ellipse id="Sheep" class="st0" cx="73.4" cy="230" rx="23" ry="22.5"/>
 
 </svg>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.9.6, SVG Export Plug-In . SVG Version: 9.03 Build 54986)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 648 350" style="enable-background:new 0 0 648 350;" xml:space="preserve">
+
+	<style type="text/css">
+		.st0{fill:none;}
+		.st1{fill:#FF0000;}
+		.st2{font-family:'MyriadPro-Regular';}
+		.st3{font-size:9px;}
+	</style>
+	<image style="overflow:visible;enable-background:new    ;" width="649" height="344" id="Map" xlink:href="/Bath City Farm/Peter's-html/Content/MapImg.png"  transform="matrix(0.9985 0 0 0.9985 0 2.7544)">
+	</image>
+	<circle id="Rabbits" class="st0" cx="310.5" cy="253.2" r="13.5"/>
+	<rect id="Pigs" x="133.2" y="266.7" class="st0" width="81.2" height="54.7"/>
+	<circle id="Cows" class="st0" cx="57" cy="97.8" r="18.5"/>
+	<circle id="Ducks" class="st0" cx="222.6" cy="194.7" r="12.4"/>
+	<ellipse id="Sheep" class="st0" cx="73.4" cy="230" rx="23" ry="22.5"/>
+
+</svg>
+>>>>>>> Stashed changes:Bath City Farm/Peter's-html/Content/Map.svg
