@@ -1,4 +1,5 @@
-/* Body setup with column direction and center space for scanner */
+/* Updated Playful & Accessible QR Scanner Styling */
+
 body {
   margin: 0;
   padding: 0;
@@ -6,33 +7,44 @@ body {
   background: linear-gradient(to bottom right, #ffcc70, #ff9e80);
   font-family: "Comic Sans MS", cursive, sans-serif;
   display: flex;
-  flex-direction: column;
-}
-
-/* Main content takes full available space between top and nav */
-main {
-  flex: 1;
-  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
 }
 
-/* QR Scanner styling */
-#my-qr-reader {
-  width: 100%;
-  max-width: 380px;
+/* .container {
+  width: 90%;
+  max-width: 400px;
+  background-color: #fffbec;
   padding: 20px;
-  background-color: #fffaf0;
-  border: 2px dashed #ffa500;
   border-radius: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+} */
+
+.container h1 {
+  color: #ff6f00;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
 }
 
-/* Optional: Remove info icon */
+.section {
+  padding: 16px;
+}
+
+#my-qr-reader {
+  padding: 12px !important;
+  background-color: #fffaf0;
+  border: 2px dashed #ffa500 !important;
+  border-radius: 12px;
+}
+.section {
+  background-color: #fffbec;
+  padding: 20px 15px; /* reduced padding */
+  border: 1px solid #ffe4b5; /* thinner, softer border */
+  border-radius: 1em;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* lighter shadow */
+}
+
 #my-qr-reader img[alt="Info icon"] {
   display: none;
 }
@@ -42,15 +54,6 @@ main {
   height: 72px !important;
 }
 
-/* Camera feed styling */
-video {
-  width: 100% !important;
-  height: auto !important;
-  border-radius: 1em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Action button styling */
 button {
   padding: 12px 24px;
   border: none;
@@ -70,14 +73,20 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Scan type link */
 #html5-qrcode-anchor-scan-type-change {
   text-decoration: none !important;
   color: #ff6600;
   font-weight: bold;
 }
 
-/* Bottom nav bar */
+video {
+  width: 100% !important;
+  height: auto !important;
+  border: none !important;
+  border-radius: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .bottom-image-nav {
   position: fixed;
   bottom: 0;
