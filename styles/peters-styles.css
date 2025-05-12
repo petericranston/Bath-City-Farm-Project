@@ -98,6 +98,10 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+#stickerBookModalLabel {
+  font-family: "Nunito", sans-serif;
+}
+
 /* Button Styles */
 button {
   font-family: "Comic Sans MS", cursive;
