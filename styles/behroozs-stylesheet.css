@@ -30,12 +30,14 @@
 }
 
 .card-images {
-  width: 100%;
+  width: 45px;
+  height: 50px;
+  border-radius: 5px;
 }
 
 .image-container {
   width: 40%;
-  margin-right: 5px;
+  margin-right: 5px
 }
 
 #qr-image-container {
@@ -146,6 +148,10 @@
   .card-p {
     font-size: 0.8rem;
   }
+  .card-images{
+    width: 100%;
+    height: 90%;
+  }
   .image-container {
     width: 21%;
   }
@@ -184,6 +190,9 @@
   }
   .image-container {
     width: 16%;
+  }
+  .card-images{
+    height: 95%;
   }
   #carouselExampleIndicators {
     width: 60%;
