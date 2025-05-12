@@ -44,6 +44,12 @@ html {
   align-items: center;
 }
 
+#svg-container {
+  background: red;
+  min-height: 300px;
+  border: 2px solid black;
+}
+
 #svg-container svg {
   width: auto;
   height: auto;
