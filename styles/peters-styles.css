@@ -3,14 +3,6 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-body,
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
-
 .app-header {
   background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
   color: #fff;
@@ -21,31 +13,6 @@ html {
   font-size: 1.4rem;
   font-weight: bold;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-#map-wrapper {
-  display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center; /* center vertically */
-  min-height: 60vh; /* makes it tall enough to center nicely */
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-#svg-container {
-  max-width: 100%;
-  max-height: 80vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#svg-container svg {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .app-title {
