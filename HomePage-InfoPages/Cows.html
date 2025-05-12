@@ -266,7 +266,43 @@
       </div>
     </main>
 
+    <!-- Custom Sticker Modal -->
+    <div
+      id="sticker-modal"
+      class="modal fade"
+      tabindex="-1"
+      aria-labelledby="stickerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="stickerModalLabel">Sticker Collected!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>🎉 You collected the 🐮 Cow Sticker! Well done!</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       function checkAnswers() {
         const questions = ["q1", "q2", "q3", "q4"];
@@ -330,31 +366,43 @@
       }
 
       function claimSticker(pageKey) {
-        const stickerMap = {
-          rabbit: "🐇",
-          chicken: "🐔",
-          pig: "🐷",
-          cow: "🐮",
-          duck: "🦆",
-          sheep: "🐑",
-        };
+  const stickerMap = {
+    rabbit: "🐇",
+    chicken: "🐔",
+    pig: "🐷",
+    cow: "🐮",
+    duck: "🦆",
+    sheep: "🐑",
+  };
 
-        let stickers = JSON.parse(localStorage.getItem("stickers")) || [];
-        let claimed = JSON.parse(localStorage.getItem("claimedStickers")) || {};
+  let stickers = JSON.parse(localStorage.getItem("stickers")) || [];
+  let claimed = JSON.parse(localStorage.getItem("claimedStickers")) || {};
 
-        if (claimed[pageKey]) {
-          alert("You already collected this sticker!");
-          return;
-        }
+  const modalTitle = document.getElementById("stickerModalLabel");
+  const modalBody = document.querySelector("#sticker-modal .modal-body");
 
-        const newSticker = stickerMap[pageKey];
-        stickers.push(newSticker);
-        claimed[pageKey] = true;
+  const modal = new bootstrap.Modal(document.getElementById("sticker-modal"));
 
-        localStorage.setItem("stickers", JSON.stringify(stickers));
-        localStorage.setItem("claimedStickers", JSON.stringify(claimed));
-        alert(`Yay! You collected the ${newSticker} sticker!`);
-      }
+  if (claimed[pageKey]) {
+    modalTitle.textContent = "Sticker Already Collected";
+    modalBody.innerHTML = `<p>✅ You've already collected the ${stickerMap[pageKey]} sticker!</p>`;
+    modal.show();
+    return;
+  }
+
+  const newSticker = stickerMap[pageKey];
+  stickers.push(newSticker);
+  claimed[pageKey] = true;
+
+  localStorage.setItem("stickers", JSON.stringify(stickers));
+  localStorage.setItem("claimedStickers", JSON.stringify(claimed));
+
+  modalTitle.textContent = "Sticker Collected!";
+  modalBody.innerHTML = `<p>🎉 You collected the ${newSticker} sticker! Well done!</p>`;
+  modal.show();
+}
+
     </script>
   </body>
 </html>
+
