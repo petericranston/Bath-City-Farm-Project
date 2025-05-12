@@ -1,6 +1,9 @@
 body {
   background-color: #f5f5f5; /* Soft gray background for contrast */
   font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-header {
