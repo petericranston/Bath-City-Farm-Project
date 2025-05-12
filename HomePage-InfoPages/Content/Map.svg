@@ -9,7 +9,7 @@
 		.st2{font-family:'MyriadPro-Regular';}
 		.st3{font-size:9px;}
 	</style>
-	<image style="overflow:visible;enable-background:new    ;" width="649" height="344" id="Map" xlink:href="Content/MapImg.png"  transform="matrix(0.9985 0 0 0.9985 0 2.7544)">
+	<image style="overflow:visible;enable-background:new    ;" width="649" height="344" id="Map" xlink:href="./MapImg.png"  transform="matrix(0.9985 0 0 0.9985 0 2.7544)">
 	</image>
 	<circle id="Rabbits" class="st0" cx="310.5" cy="253.2" r="13.5"/>
 	<rect id="Pigs" x="133.2" y="266.7" class="st0" width="81.2" height="54.7"/>
