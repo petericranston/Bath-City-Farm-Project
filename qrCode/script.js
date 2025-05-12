@@ -1,3 +1,5 @@
+// script.js file
+
 function domReady(fn) {
   if (
     document.readyState === "complete" ||
@@ -10,16 +12,14 @@ function domReady(fn) {
 }
 
 domReady(function () {
+  // If found you qr code
   function onScanSuccess(decodeText, decodeResult) {
-    console.log("Scanned QR Code:", decodeText);
-    window.location.href = decodeText;
+    alert("You Qr is : " + decodeText, decodeResult);
   }
 
   let htmlscanner = new Html5QrcodeScanner("my-qr-reader", {
     fps: 10,
-    qrbox: 250, // fixed typo from 'qrbos' to 'qrbox'
+    qrbos: 250,
   });
-
   htmlscanner.render(onScanSuccess);
 });
-

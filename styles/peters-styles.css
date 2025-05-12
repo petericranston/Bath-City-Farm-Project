@@ -23,121 +23,51 @@ body {
   font-size: 1.8rem;
 }
 
-/* Sticker Book Styles */
+.sticker-button button {
+  position: fixed;
+  bottom: 10%;
+  width: 90%;
+  background-color: #ffcc00; /* Bright yellow for visibility */
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Comic Sans MS", cursive;
+  padding: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.sticker-button button:hover {
+  background-color: #f76c6c; /* Slight color change on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 .sticker-book-body {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  background: #fff4cc;
+  color: #333;
+  text-align: center;
   padding: 20px;
-  background-color: #f9f9f9; /* Light grey background for minimalism */
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.sticker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
 .sticker-slot {
-  position: relative;
-  background-color: #fff; /* White background for stickers */
+  background: #fffbee;
+  padding: 16px;
   border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  width: 100px;
-  height: 120px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle emphasis */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 28px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
-
-/* Locking visual changes */
-.sticker-slot.locked {
-  background-color: #e0e0e0; /* Light grey background for locked stickers */
-  color: #b0b0b0; /* Light grey text for locked stickers */
-  cursor: not-allowed;
-  opacity: 0.6; /* Faded effect for locked stickers */
-}
-
-.sticker-slot:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Hover effect */
-}
-
-.sticker-slot.selected {
-  transform: scale(1.1);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Slight scaling effect for selected stickers */
-}
-
-.sticker-emoji {
-  font-size: 2.5rem;
-  transition: transform 0.2s ease;
-}
-
-/* Faded effect on hover for locked stickers */
-.sticker-slot.locked:hover {
-  transform: none;
-}
-
-/* Label under the sticker */
-.label {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #333; /* Dark text for unlocked stickers */
-  text-transform: capitalize;
-}
-
-/* Modal Header */
-.modal-header {
-  background-color: #fafafa; /* Light grey background */
-  color: #333; /* Dark text for header */
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  font-size: 1.5rem;
-  font-family: 'Comic Sans MS', cursive;
-  padding: 20px;
-}
-
-/* Button Styles */
-button {
-  font-family: 'Comic Sans MS', cursive;
-  background-color: #f1f1f1; /* Soft grey button background */
-  color: #555; /* Dark text */
-  border-radius: 8px;
-  padding: 12px;
-  border: none;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #e0e0e0; /* Darker grey for hover effect */
-}
-
-/* General Sticker Book Layout */
-.sticker-book-container {
-  padding: 20px;
-  background-color: #fff; /* White background for the container */
-  border-radius: 16px;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the container */
-}
-
-.sticker-book-container .sticker-button {
-  background-color: #fff; /* Neutral background for the button */
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
-  border: 2px solid #e0e0e0; /* Soft border for the button */
-}
-
-.sticker-book-container .sticker-button:hover {
-  background-color: #f1f1f1; /* Slightly darker grey on hover */
-}
-
-/* Hover effect on sticker grid */
-.sticker-grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-}
-
-
