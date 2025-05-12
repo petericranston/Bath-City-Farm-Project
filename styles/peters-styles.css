@@ -19,6 +19,23 @@ body {
   font-size: 1.6rem;
 }
 
+.map-section {
+  min-height: 100vh; /* Fill the whole screen vertically */
+  display: flex; /* Flexbox to center contents */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: relative; /* Needed if you want to absolutely position inside */
+  overflow: hidden; /* Prevents scrollbars if SVG is larger */
+  background-color: #fff7d4; /* Optional: matches your farm theme */
+}
+
+#svg-container svg {
+  max-width: 100%;
+  max-height: 80vh;
+  height: auto;
+  width: auto;
+}
+
 .hamburger {
   font-size: 1.8rem;
 }
