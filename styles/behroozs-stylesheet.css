@@ -17,6 +17,10 @@
   padding: 10px 0px;
 }
 
+#landing-main {
+  margin-top: 60px;
+}
+
 #ongoing-header {
   font-size: 2rem;
   font-family: "Open Sans", sans-serif;
