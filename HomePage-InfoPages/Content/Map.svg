@@ -16,5 +16,4 @@
 	<circle id="Cows" class="st0" cx="57" cy="97.8" r="18.5"/>
 	<circle id="Ducks" class="st0" cx="222.6" cy="194.7" r="12.4"/>
 	<ellipse id="Sheep" class="st0" cx="73.4" cy="230" rx="23" ry="22.5"/>
-
 </svg>
