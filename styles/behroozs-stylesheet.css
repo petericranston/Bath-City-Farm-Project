@@ -113,8 +113,10 @@ main#landing-main {
 #map-btn {
   padding: 5px 10px 5px 10px;
   border: solid black 2px;
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: #ffc2b3;
+  width: 300px;
+  height: 100px;
 }
 
 .main-p {
