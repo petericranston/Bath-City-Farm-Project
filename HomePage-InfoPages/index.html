@@ -24,11 +24,9 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #9eb57b;
       }
 
       main {
-        height: 100%;
         display: flex;
         flex-direction: column;
       }
@@ -38,19 +36,20 @@
       }
 
       #svg-container {
-        flex: 1 1 auto;
         width: 100%;
-        height: 100%;
+        height: auto;
+        max-height: 100vh;
+        overflow: auto;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        margin-top: 1rem;
       }
 
-      #svg-container img,
-      #svg-container svg {
+      #svg-container svg,
+      #svg-container img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
+        height: auto;
       }
     </style>
   </head>
