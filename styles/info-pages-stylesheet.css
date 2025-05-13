@@ -14,7 +14,7 @@ header {
 }
 
 .top-header {
-  background-color: #1e5f00; /* Darker orange */
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -54,7 +54,7 @@ main {
 }
 
 .bubble-orange {
-  background-color: #ffba60;
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
   color: #3b3b3b;
 }
 

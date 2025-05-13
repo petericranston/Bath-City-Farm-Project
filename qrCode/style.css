@@ -3,19 +3,22 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: linear-gradient(to bottom right, #ffcc70, #ff9e80);
+  background: white;
   font-family: "Comic Sans MS", cursive, sans-serif;
   display: flex;
   flex-direction: column;
+  padding-bottom: 190px;
 }
 
 /* Main content takes full available space between top and nav */
 main {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; 
+   justify-content: center;
   padding: 20px;
+  
+
 }
 
 /* QR Scanner styling */
@@ -23,7 +26,7 @@ main {
   width: 100%;
   max-width: 380px;
   padding: 20px;
-  background-color: #fffaf0;
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
   border: 2px dashed #ffa500;
   border-radius: 1em;
   display: flex;
@@ -54,7 +57,7 @@ video {
 button {
   padding: 12px 24px;
   border: none;
-  border-radius: 1.5em;
+  border-radius: 15em;
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -73,7 +76,7 @@ button:hover {
 /* Scan type link */
 #html5-qrcode-anchor-scan-type-change {
   text-decoration: none !important;
-  color: #ff6600;
+  color: #000000;
   font-weight: bold;
 }
 
@@ -89,4 +92,46 @@ button:hover {
   align-items: center;
   padding: 10px 0;
   z-index: 1000;
+}
+main {
+  padding-top: 140px; /* adjust to match your nav height */
+}
+
+.qr-instructions {
+  font-size: 1.4rem;
+  background-color: #fff3e0;
+  border-left: 6px solid #f7a440;
+  padding: 20px;
+  margin: 0 20px 30px; /* removed top margin, using main padding-top */
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  color: #5a3e1b;
+  font-weight: bold;
+  line-height: 1.6;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.qr-instructions span {
+  font-size: 1.1rem;
+  display: block;
+  margin-top: 10px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.top-header {
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
