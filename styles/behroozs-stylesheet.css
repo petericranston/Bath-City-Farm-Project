@@ -265,7 +265,7 @@ main#landing-main {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #ffffff;
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
   border-top: 1px solid #ccc;
   display: flex;
   justify-content: space-around;
