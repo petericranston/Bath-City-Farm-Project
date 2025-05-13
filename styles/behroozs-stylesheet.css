@@ -117,6 +117,9 @@ main#landing-main {
   background-color: #ffc2b3;
   width: 300px;
   height: 100px;
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .main-p {
