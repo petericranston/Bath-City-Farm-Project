@@ -14,7 +14,7 @@ header {
 }
 
 .top-header {
-  background-color: #1e5f00; /* Darker orange */
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -34,7 +34,7 @@ main {
 }
 
 .bubble {
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
@@ -54,7 +54,7 @@ main {
 }
 
 .bubble-orange {
-  background-color: #ffba60;
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
   color: #3b3b3b;
 }
 
@@ -108,4 +108,66 @@ main {
   border-radius: 50%;
   padding: 0 12px;
   line-height: 1.2;
+}
+.app-header {
+  background: linear-gradient(90deg, #ff9900, #f76c6c); /* Bold gradient */
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  font-size: 1.6rem;
+}
+.landing-bubble-orange {
+  background-color: white; /* Bold gradient */
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  color: #3b3b3b;
+  font-family: "Lato", sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.landing-bubble-orange:hover {
+  transform: scale(1.02);
+}
+#btn-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#map-btn {
+  background-color: #ff9900; /* Bright farm-friendly color */
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px; /* Rounded edges */
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+#map-btn:hover {
+  background-color: #f76c6c; /* Warmer color on hover */
+  transform: scale(1.05); /* Slight grow effect */
+}
+
+#map-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 153, 0, 0.6); /* Highlight on focus */
+}
+
+#map-btn:active {
+  background-color: #ff5722; /* Darker color when clicked */
 }
