@@ -337,6 +337,71 @@
             });
           });
         });
+
+      // Touch Pinch Zoom
+      let initialPinchDistance = null;
+      let lastTouchZoom = zoom;
+
+      svg.addEventListener(
+        "touchstart",
+        (e) => {
+          if (e.touches.length === 2) {
+            e.preventDefault();
+            initialPinchDistance = getTouchDistance(e.touches[0], e.touches[1]);
+          }
+        },
+        { passive: false }
+      );
+
+      svg.addEventListener(
+        "touchmove",
+        (e) => {
+          if (e.touches.length === 2 && initialPinchDistance !== null) {
+            e.preventDefault();
+            const newDistance = getTouchDistance(e.touches[0], e.touches[1]);
+            const scaleFactor = newDistance / initialPinchDistance;
+            let newZoom = Math.max(
+              0.5,
+              Math.min(lastTouchZoom * scaleFactor, 10)
+            );
+
+            // Center pinch point
+            const mid = getTouchMidpoint(e.touches[0], e.touches[1]);
+            const rect = svg.getBoundingClientRect();
+            const offsetX = mid.x - rect.left;
+            const offsetY = mid.y - rect.top;
+
+            const zoomRatio = newZoom / zoom;
+            panX -= (offsetX - panX) * (zoomRatio - 1);
+            panY -= (offsetY - panY) * (zoomRatio - 1);
+
+            zoom = newZoom;
+            updateTransform();
+          }
+        },
+        { passive: false }
+      );
+
+      svg.addEventListener("touchend", (e) => {
+        if (e.touches.length < 2) {
+          initialPinchDistance = null;
+          lastTouchZoom = zoom;
+        }
+      });
+
+      // Utility functions
+      function getTouchDistance(touch1, touch2) {
+        const dx = touch2.clientX - touch1.clientX;
+        const dy = touch2.clientY - touch1.clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+      }
+
+      function getTouchMidpoint(touch1, touch2) {
+        return {
+          x: (touch1.clientX + touch2.clientX) / 2,
+          y: (touch1.clientY + touch2.clientY) / 2,
+        };
+      }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
