@@ -60,92 +60,113 @@
     </div>
 
     <main>
-     
-      <!-- Map Section -->
-      <div id="svg-container"></div>
-
-      <!-- Sticker Book Button -->
-      <div class="sticker-button-container">
-        <button
-          id="sticker-book-button"
-          class="btn"
-          style="
-            position: fixed;
-            bottom: 120px;
-            width: 80%;
-            background-color: #fff4cc;
-            border: none;
-            border-radius: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-family: 'Comic Sans MS', cursive;
-            padding: 24px;
-            text-align: center;
-            left: 10%;
-          "
-          data-bs-toggle="modal"
-          data-bs-target="#stickerBookModal"
+      <div class="container mt-3">
+        <div
+          class="card shadow-sm"
+          style="border-radius: 16px; background-color: #fff4cc; font-family: 'Nunito', sans-serif"
         >
-          <div
-            class="d-flex flex-column align-items-center justify-content-center"
-          >
-            <i class="fas fa-book fa-2x mb-2" style="color: #ff9900"></i>
-            <strong
-              style="
-                font-size: 1.4rem;
-                color: #ff9900;
-                font-family: Nunito sans-serif;
-              "
-              >Sticker Book</strong
-            >
-            <small style="color: #555; font-family: Nunito sans-serif"
-              >View your collected stickers!</small
-            >
-          </div>
-        </button>
-      </div>
-
-      <!-- Sticker Book Modal -->
-      <div
-        class="modal fade"
-        id="stickerBookModal"
-        tabindex="-1"
-        aria-labelledby="stickerBookModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div
-            class="modal-content"
-            style="border-radius: 16px; background-color: #ffcc00"
-          >
-            <div
-              class="modal-header"
-              style="
-                border-top-left-radius: 16px;
-                border-top-right-radius: 16px;
-                background: linear-gradient(
-                  90deg,
-                  #ff9900,
-                  #f76c6c
-                ); /* Bold gradient */
-                color: white;
-              "
-            >
-              <h5 class="modal-title" id="stickerBookModalLabel">
-                My Sticker Book
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body sticker-book-body">
-              <div class="sticker-grid" id="stickerGrid"></div>
-            </div>
+          <div class="card-body">
+            <h5 class="card-title" style="color: #ff9900">Welcome to Bath City Farm Trail!</h5>
+            <p class="card-text" style="color: #555">
+              Tap on areas of the map to learn about different animals around the farm.
+              Collect stickers by visiting and scanning QR codes at each location!
+            </p>
           </div>
         </div>
       </div>
+      <!-- Map Section -->
+      <div id="svg-container"></div>
+      
+     <!-- Sticker Book Button -->
+<div class="sticker-button-container">
+  <button
+    id="sticker-book-button"
+    class="btn"
+    style="
+      position: fixed;
+      bottom: 120px;
+      width: 80%;
+      background-color: #2b5d2b; /* Dark green background for high contrast */
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      font-family: 'Lato', sans-serif;
+      padding: 24px;
+      text-align: center;
+      left: 10%;
+      color: #ffffff;
+    "
+    data-bs-toggle="modal"
+    data-bs-target="#stickerBookModal"
+  >
+    <div
+      class="d-flex flex-column align-items-center justify-content-center"
+    >
+      <i class="fas fa-book fa-2x mb-2" style="color: #ffffff;"></i>
+      <strong
+        style="
+          font-size: 1.4rem;
+          color: #ffffff;
+          font-family: 'Lato', sans-serif;
+        "
+        >Sticker Book</strong
+      >
+      <small style="color: #e0e0e0; font-family: 'Lato', sans-serif"
+        >View your collected stickers!</small
+      >
+    </div>
+  </button>
+</div>
+
+
+<!-- Sticker Book Modal -->
+<div
+  class="modal fade"
+  id="stickerBookModal"
+  tabindex="-1"
+  aria-labelledby="stickerBookModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div
+      class="modal-content"
+      style="
+        border-radius: 16px;
+        background-color: #2b5d2b; /* Dark green background to match button */
+        color: #ffffff;
+        font-family: 'Lato', sans-serif;
+      "
+    >
+      <div
+        class="modal-header"
+        style="
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
+          background-color: #1f401f; /* Slightly darker header */
+          color: #ffffff;
+          font-family: 'Lato', sans-serif;
+        "
+      >
+        <h5 class="modal-title" id="stickerBookModalLabel">
+          My Sticker Book
+        </h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div
+        class="modal-body sticker-book-body"
+        style="background-color: #2b5d2b; color: #ffffff;"
+      >
+        <div class="sticker-grid" id="stickerGrid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </main>
 
     <!-- Bottom Navigation -->
