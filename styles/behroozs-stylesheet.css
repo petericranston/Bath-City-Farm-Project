@@ -17,8 +17,10 @@
   padding: 10px 0px;
 }
 
-main#landing-main {
+#landing-main {
   margin-top: 0px;
+  background-color: white;
+  padding: 20px;
 }
 
 #ongoing-header {
@@ -279,3 +281,46 @@ main#landing-main {
   height: 40px;
   margin-bottom: 3px;
 }
+.how-to-use {
+  background-color: #fff6e6;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px 20px;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.2);
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.how-to-use h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #cc5500;
+  margin-bottom: 15px;
+}
+
+.how-to-use ol {
+  padding-left: 20px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.how-to-use li {
+  margin-bottom: 10px;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333; /* Dark grey is easier on the eyes than pure black */
+  background-color: #ffffff; /* Gentle off-white for warmth */
+}
+/* :root {
+  --user-font-scale: 100%;
+}
+
+body {
+  font-size: var(--user-font-scale);
+} */

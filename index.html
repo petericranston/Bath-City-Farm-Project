@@ -32,24 +32,40 @@
     </div>
 
     <main id="landing-main">
-      <section class="landing-p-container landing-bubble-orange">
+
+      <!-- <div id="text-size-controls" style="text-align: center; margin: 20px;">
+        <button onclick="changeTextSize('increase')" aria-label="Increase text size">A+</button>
+        <button onclick="changeTextSize('decrease')" aria-label="Decrease text size">A-</button>
+        <button onclick="changeTextSize('reset')" aria-label="Reset text size">Reset</button>
+      </div> -->
+      
+      <section class="how-to-use">
+        <h3>How to Use the Farm Trail App:</h3>
+        <ol>
+          <li>Follow the map around the farm.</li>
+          <li>Look for signs with QR codes like this one:</li>
+          <li>Scan each code to learn & take a quick quiz.</li>
+          <li>Collect stickers and maybe win a prize!</li>
+        </ol>
+      </section>
+      <!-- <section class="landing-p-container landing-bubble-orange">
         <h2 id="landing-header">Welcome to Bath City Farm's new tour guide!</h2>
         <p class="landing-p">
           Follow the map for a fun way to explore the farm and scan the QR codes
           dotted around to learn more.
         </p>
-      </section>
+      </section> -->
 
       <section id="qr-demo">
         <div id="qr-image-container">
           <img
             id="qr-placeholder"
-            src="./images/qr-placeholder.png"
+            src="./images/qr-scanning.jpg"
             alt="Placeholder example for the QR code"
           />
         </div>
 
-        <div class="landing-p-container landing-bubble-orange">
+        <div class="landing-p-container how-to-use">
           <p class="landing-p">
             Scan these QR codes plotted around the farm to get information on
             the farm! <br />
@@ -57,20 +73,42 @@
             win stickers and potentially other prizes.
           </p>
         </div>
+       
+        
 
         <div id="btn-container">
           <a href="./HomePage-InfoPages/index.html">
-            <button id="map-btn">Explore the Farm Map</button>
+            <button id="map-btn">Start Exploring the Map</button>
           </a>
+          
         </div>
         
       </section>
+
     </main>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
+      
     ></script>
+    <!-- <script>
+      let currentSize = 100; // Start at 100%
+    
+      function changeTextSize(action) {
+        if (action === 'increase' && currentSize < 150) {
+          currentSize += 10;
+        } else if (action === 'decrease' && currentSize > 70) {
+          currentSize -= 10;
+        } else if (action === 'reset') {
+          currentSize = 100;
+        }
+    
+        // Apply to entire document
+        document.documentElement.style.setProperty('--user-font-scale', currentSize + '%');
+      }
+    </script>
+     -->
   </body>
 </html>
