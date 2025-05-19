@@ -60,7 +60,7 @@
     </div>
 
     <main>
-      <div class="container mt-3">
+      <!-- <div class="container mt-3">
         <div
           class="card shadow-sm"
           style="border-radius: 16px; background-color: #fff4cc; font-family: 'Nunito', sans-serif"
@@ -73,11 +73,11 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Map Section -->
       <div id="svg-container"></div>
       
-     <!-- Sticker Book Button -->
+     <!-- Sticker Book Button
 <div class="sticker-button-container">
   <button
     id="sticker-book-button"
@@ -119,7 +119,7 @@
 </div>
 
 
-<!-- Sticker Book Modal -->
+< --Sticker Book Modal -->
 <div
   class="modal fade"
   id="stickerBookModal"
@@ -165,7 +165,70 @@
       </div>
     </div>
   </div>
+</div> 
+<div class="bottom-controls">
+  <!-- Instructions Button -->
+  <button
+    class="control-button explore-btn"
+    data-bs-toggle="modal"
+    data-bs-target="#instructionsModal"
+  >
+    <i class="fas fa-info-circle"></i> Instructions
+  </button>
+
+  <!-- Sticker Book Button -->
+  <button
+    id="sticker-book-button"
+    class="control-button"
+    data-bs-toggle="modal"
+    data-bs-target="#stickerBookModal"
+  >
+    <i class="fas fa-book"></i> Sticker Book
+  </button>
 </div>
+
+<!-- Instructions Modal -->
+<div
+  class="modal fade"
+  id="instructionsModal"
+  tabindex="-1"
+  aria-labelledby="instructionsModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div
+      class="modal-content"
+      style="border-radius: 16px; background-color: #d0ebff;"
+    >
+      <div
+        class="modal-header"
+        style="
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
+          background-color: #003366;
+          color: white;
+        "
+      >
+        <h5 class="modal-title" id="instructionsModalLabel">Instructions</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="font-family: 'Lato', sans-serif; font-size: 1.1rem; color: #003366;">
+        <p>Here you can add your app's instructions or helpful info for users.</p>
+        <ul>
+          <li>Step 1: Do this.</li>
+          <li>Step 2: Do that.</li>
+          <li>Step 3: Have fun!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     </main>
 

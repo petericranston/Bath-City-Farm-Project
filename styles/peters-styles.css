@@ -179,19 +179,66 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.explore-btn {
-  background-color: #a3d9a5;
+.bottom-controls {
+  position: fixed;
+  bottom: 70px; /* above nav */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* space between buttons */
+  padding: 10px 20px;
+  z-index: 1050;
+}
+
+.control-button {
   border: none;
-  border-radius: 25px;
-  padding: 12px 30px;
-  font-size: 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  font-family: "Lato", sans-serif;
+  padding: 20px 40px;
+  font-size: 1.4rem;
   font-weight: bold;
-  color: #2b5d2b;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 220px;
+  justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(43, 93, 43, 0.5);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.control-button i {
+  font-size: 1.6rem;
+}
+
+.explore-btn {
+  background-color: #d0ebff;
+  color: #003366;
 }
 
 .explore-btn:hover {
-  background-color: #8ac48a;
+  background-color: #a8d4f7;
 }
+
+#sticker-book-button {
+  background-color: #fff4cc;
+  color: #7a5400;
+}
+
+#sticker-book-button:hover {
+  background-color: #ffe799;
+}
+
+@media (max-width: 576px) {
+  .bottom-controls {
+    flex-direction: column;
+    gap: 20px;
+    bottom: 90px;
+  }
+
+  .control-button {
+    width: 90%;
+  }
+}
+
