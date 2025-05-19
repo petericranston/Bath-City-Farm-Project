@@ -181,31 +181,29 @@ button:hover {
 
 .bottom-controls {
   position: fixed;
-  bottom: 70px; /* above nav */
+  bottom: 70px; /* adjust as needed to stay above nav */
   left: 0;
   right: 0;
   display: flex;
-  justify-content: center;
-  gap: 30px; /* space between buttons */
+  justify-content: center;  /* Centers the buttons horizontally */
+  align-items: center;
+  gap: 20px; /* space between buttons */
   padding: 10px 20px;
-  z-index: 1050;
+  z-index: 1050; /* ensures it stays above navigation */
 }
 
 .control-button {
   border: none;
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  font-family: "Lato", sans-serif;
-  padding: 20px 40px;
-  font-size: 1.4rem;
+  padding: 16px 24px;
+  font-size: 1.2rem;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 220px;
-  justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 180px; /* or auto depending on content */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+  font-family: "Lato", sans-serif;
 }
 
 .control-button i {
