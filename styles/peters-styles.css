@@ -147,3 +147,54 @@ button:hover {
   justify-content: center;
   padding: 10px;
 }
+.welcome-card {
+  background-color: #FFF9E5;
+  padding: 20px 25px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(191, 164, 88, 0.3);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #5B4700;
+  text-align: center;
+}
+
+.welcome-card h1 {
+  color: #7B5E00;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.welcome-card p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.welcome-card ol {
+  text-align: left;
+  margin: 0 0 20px 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.welcome-card ol li {
+  margin-bottom: 10px;
+}
+
+.explore-btn {
+  background-color: #A3D9A5;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2B5D2B;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(43, 93, 43, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #8AC48A;
+}
