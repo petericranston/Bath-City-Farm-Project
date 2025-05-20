@@ -1,3 +1,5 @@
+
+
 .events-header {
   display: flex;
   justify-content: center;
@@ -19,7 +21,7 @@
 
 #landing-main {
   margin-top: 0px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
 }
 
@@ -315,8 +317,9 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: #333; /* Dark grey is easier on the eyes than pure black */
-  background-color: #ffffff; /* Gentle off-white for warmth */
+  background-color: #010101; /* Gentle off-white for warmth */
   font-size: var(--user-font-scale);
+  margin-bottom: 0;
 }
 :root {
   --user-font-scale: 100%;

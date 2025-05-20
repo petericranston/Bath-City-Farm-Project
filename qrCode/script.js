@@ -17,22 +17,10 @@ domReady(function () {
 
   let htmlscanner = new Html5QrcodeScanner("my-qr-reader", {
     fps: 10,
-    qrbox: 250, // fixed typo from 'qrbos' to 'qrbox'
+    qrbox: 250,
+    showUploadButton: false,
+    facingMode: { exact: "environment" }, // Back camera
   });
 
   htmlscanner.render(onScanSuccess);
 });
-
-navigator.mediaDevices
-  .getUserMedia({
-    video: { facingMode: { exact: "environment" } } // Use the back camera
-  })
-  .then(function (stream) {
-    const video = document.querySelector("video");
-    video.srcObject = stream;
-    video.setAttribute("playsinline", true); // required for iOS Safari
-    video.play();
-  })
-  .catch(function (err) {
-    console.error("Error accessing camera: ", err);
-  });
