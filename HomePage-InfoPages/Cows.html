@@ -4,19 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cows at the Farm</title>
-    <link
-      rel="stylesheet"
-      href="../../Bath-City-Farm-Project/styles/info-pages-stylesheet.css"
-    />
+    <link rel="stylesheet" href="/styles/info-pages-stylesheet.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <style>
+      .quiz-container {
+        position: relative;
+        overflow: hidden;
+        height: 400px; /* Adjust based on your card height */
+        margin-bottom: 20px;
+      }
+
+      .question-card {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 100%;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .question-card.active {
+        left: 0;
+        opacity: 1;
+      }
+
+      .question-card.slide-out-left {
+        left: -100%;
+        opacity: 0;
+      }
+
+      .form-check {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px 0;
+        cursor: pointer;
+        font-size: 1.2rem;
+        background-color: #f8f9fa;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .form-check:hover {
+        background-color: #e2f0d9;
+        transform: scale(1.02);
+      }
+
+      .bubble {
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px 0;
+      }
+
+      .bubble-orange {
+        background-color: #ffe5b4;
+      }
+
+      .bubble-yellow {
+        background-color: #fff3cd;
+      }
+
+      #quiz-score,
+      #retryBtn,
+      #sticker-button {
+        margin-top: 30px;
+      }
+    </style>
   </head>
 
   <body>
     <header>
-      <!-- Page Title -->
       <div class="top-header">🐄 Cows</div>
       <a href="index.html" class="close-button" aria-label="Close Page"
         >&times;</a
@@ -25,7 +84,7 @@
 
     <main>
       <div class="content-container">
-        <div class="bubble  text-center">
+        <div class="bubble text-center">
           <h2>🐄 All About Cows!</h2>
           <p>
             Cows are big, friendly animals that give us milk and live on farms.
@@ -38,7 +97,7 @@
           class="animal-image"
         />
 
-        <div class="bubble ">
+        <div class="bubble">
           <h4>🏡 Where Do Cows Live?</h4>
           <p>
             Cows live in fields and barns on farms. They love to munch on grass
@@ -46,7 +105,7 @@
           </p>
         </div>
 
-        <div class="bubble ">
+        <div class="bubble">
           <h4>🍽️ What Do Cows Eat?</h4>
           <p>
             Cows mostly eat grass, hay, and grains. Farmers feed them every day
@@ -60,7 +119,7 @@
           class="animal-image"
         />
 
-        <div class="bubble ">
+        <div class="bubble">
           <h4>🐄 What Do Cows Give Us?</h4>
           <p>
             Cows give us fresh milk! That milk can turn into cheese, yogurt, and
@@ -78,255 +137,157 @@
         </div>
 
         <!-- Quiz Intro -->
-        <div class="bubble bubble-orange quizTitle">
+        <div class="bubble bubble-orange text-center">
           <h4>🧠 Quick Cow Quiz!</h4>
           <p>Let’s test your moo-velous cow knowledge! 🐮</p>
         </div>
 
-        <!-- Question 1 -->
-        <div class="bubble bubble-orange">
-          <h5>1. What do cows mostly eat?</h5>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q1"
-              value="correct"
-            />
-            <label class="form-check-label"
-              >Grass 🌱 <span class="feedback"></span
-            ></label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q1"
-              value="wrong"
-            />
-            <label class="form-check-label"
-              >Candy 🍬 <span class="feedback"></span
-            ></label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q1"
-              value="wrong"
-            />
-            <label class="form-check-label"
-              >Pizza 🍕 <span class="feedback"></span
-            ></label>
-          </div>
-        </div>
-
-        <!-- Question 2 -->
-        <div class="bubble bubble-orange">
-          <h5>2. Where do cows live?</h5>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q2"
-              value="wrong"
-            />
-            <label class="form-check-label"
-              >In the ocean 🌊 <span class="feedback"></span
-            ></label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q2"
-              value="wrong"
-            />
-            <label class="form-check-label"
-              >On the moon 🌕 <span class="feedback"></span
-            ></label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q2"
-              value="correct"
-            />
-            <label class="form-check-label"
-              >In fields and barns 🏡 <span class="feedback"></span
-            ></label>
-          </div>
-        </div>
-
-        <!-- Question 3 -->
-        <div class="bubble bubble-orange">
-          <h5>3. What do cows give us?</h5>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q3"
-              value="wrong"
-            />
-            <label class="form-check-label"
-              >Soda 🥤 <span class="feedback"></span
-            ></label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q3"
-              value="correct"
-            />
-            <label class="form-check-label"
-              >Milk 🥛 <span class="feedback"></span
-            ></label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q3"
-              value="wrong"
-            />
-            <label class="form-check-label"
-              >Bananas 🍌 <span class="feedback"></span
-            ></label>
-          </div>
-        </div>
-
-        <!-- Question 4 -->
-        <div class="bubble bubble-orange">
-          <h5>4. What sound does a cow make?</h5>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q4"
-              value="wrong"
-            />
-            <label class="form-check-label"
-              >Meow 🐱 <span class="feedback"></span
-            ></label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q4"
-              value="correct"
-            />
-            <label class="form-check-label"
-              >Moo 🐄 <span class="feedback"></span
-            ></label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="q4"
-              value="wrong"
-            />
-            <label class="form-check-label"
-              >Woof 🐶 <span class="feedback"></span
-            ></label>
-          </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="text-center mt-4">
-          <button class="btn btn-success btn-lg" onclick="checkAnswers()">
-            ✅ Check My Answers
-          </button>
-          <button
-            id="retryBtn"
-            class="btn btn-warning btn-lg d-none mt-2"
-            onclick="resetQuiz()"
+        <!-- Quiz Questions with Slide Animation -->
+        <div class="quiz-container">
+          <div
+            id="question-1"
+            class="question-card active bubble bubble-orange"
           >
-            🔁 Try Again
-          </button>
-        </div>
+            <h5>1. What do cows mostly eat?</h5>
+            <div class="form-check" onclick="nextQuestion(event, 'correct')">
+              🌱 Grass
+            </div>
+            <div class="form-check" onclick="nextQuestion(event, 'wrong')">
+              🍬 Candy
+            </div>
+            <div class="form-check" onclick="nextQuestion(event, 'wrong')">
+              🍕 Pizza
+            </div>
+          </div>
 
-        <!-- Score + Sticker Button -->
-        <div
-          id="quiz-score"
-          class="bubble bubble-yellow mt-4 text-center d-none"
-        >
-          <h4 id="score-message"></h4>
-          <p>🌟 Great job learning about Cows!</p>
-        </div>
+          <div id="question-2" class="question-card bubble bubble-orange">
+            <h5>2. Where do cows live?</h5>
+            <div class="form-check" onclick="nextQuestion(event, 'wrong')">
+              🌊 In the ocean
+            </div>
+            <div class="form-check" onclick="nextQuestion(event, 'wrong')">
+              🌕 On the moon
+            </div>
+            <div class="form-check" onclick="nextQuestion(event, 'correct')">
+              🏡 In fields and barns
+            </div>
+          </div>
 
-        <div id="sticker-button" class="text-center mt-4 d-none">
-          <button class="btn btn-primary btn-lg" onclick="claimSticker('cow')">
-            Collect Cow Sticker
-          </button>
+          <div id="question-3" class="question-card bubble bubble-orange">
+            <h5>3. What do cows give us?</h5>
+            <div class="form-check" onclick="nextQuestion(event, 'wrong')">
+              🥤 Soda
+            </div>
+            <div class="form-check" onclick="nextQuestion(event, 'correct')">
+              🥛 Milk
+            </div>
+            <div class="form-check" onclick="nextQuestion(event, 'wrong')">
+              🍌 Bananas
+            </div>
+          </div>
+
+          <div id="question-4" class="question-card bubble bubble-orange">
+            <h5>4. What sound does a cow make?</h5>
+            <div class="form-check" onclick="nextQuestion(event, 'wrong')">
+              🐱 Meow
+            </div>
+            <div class="form-check" onclick="nextQuestion(event, 'correct')">
+              🐄 Moo
+            </div>
+            <div class="form-check" onclick="nextQuestion(event, 'wrong')">
+              🐶 Woof
+            </div>
+          </div>
+          <!-- Score + Sticker -->
+          <div id="quiz-score" class="bubble bubble-yellow text-center d-none">
+            <h4 id="score-message"></h4>
+            <p>🌟 Great job learning about Cows!</p>
+          </div>
+
+          <div id="retryBtn" class="text-center d-none">
+            <button class="btn btn-warning btn-lg" onclick="resetQuiz()">
+              🔁 Try Again
+            </button>
+          </div>
+
+          <div id="sticker-button" class="text-center d-none">
+            <button
+              class="btn btn-primary btn-lg"
+              onclick="claimSticker('cow')"
+            >
+              Collect Cow Sticker
+            </button>
+          </div>
         </div>
       </div>
     </main>
 
-    <!-- Scripts -->
     <script>
-      function checkAnswers() {
-        const questions = ["q1", "q2", "q3", "q4"];
-        let score = 0;
+      let currentQuestion = 1;
+      let score = 0;
+      const totalQuestions = 4;
 
-        questions.forEach((q) => {
-          const radios = document.getElementsByName(q);
-          radios.forEach((radio) => {
-            const label = radio.nextElementSibling;
-            const feedback = label.querySelector(".feedback");
-            feedback.textContent = ""; // reset
+      function nextQuestion(event, correctness) {
+        event.preventDefault();
+        event.stopPropagation();
 
-            if (radio.checked) {
-              if (radio.value === "correct") {
-                feedback.textContent = " ✅ Correct!";
-                feedback.style.color = "green";
-                score++;
-              } else {
-                feedback.textContent = " ❌ Oops!";
-                feedback.style.color = "red";
-              }
-              feedback.style.fontWeight = "bold";
-            }
+        if (correctness === "correct") {
+          score++;
+        }
+
+        const currentDiv = document.getElementById(
+          `question-${currentQuestion}`
+        );
+        const nextDiv = document.getElementById(
+          `question-${currentQuestion + 1}`
+        );
+
+        if (nextDiv) {
+          currentDiv.classList.remove("active");
+          currentDiv.classList.add("slide-out-left");
+
+          requestAnimationFrame(() => {
+            nextDiv.classList.add("active");
           });
-        });
 
+          currentQuestion++;
+        } else {
+          currentDiv.classList.remove("active");
+          showScore();
+        }
+      }
+
+      function showScore() {
         const scoreBox = document.getElementById("quiz-score");
         const message = document.getElementById("score-message");
-        scoreBox.classList.remove("d-none");
-
-        const stickerBtn = document.getElementById("sticker-button");
         const retryBtn = document.getElementById("retryBtn");
+        const stickerBtn = document.getElementById("sticker-button");
 
-        if (score === 4) {
-          message.innerHTML = `🎉 Perfect! You got all <strong>4 out of 4</strong> correct!`;
+        scoreBox.classList.remove("d-none");
+        if (score === totalQuestions) {
+          message.innerHTML = `🎉 Perfect! You got all <strong>${score} out of ${totalQuestions}</strong> correct!`;
           stickerBtn.classList.remove("d-none");
           retryBtn.classList.add("d-none");
         } else {
-          message.innerHTML = `Oops! You got <strong>${score} out of 4</strong>. Try again to collect the sticker!`;
+          message.innerHTML = `Oops! You got <strong>${score} out of ${totalQuestions}</strong>. Try again to collect the sticker!`;
           retryBtn.classList.remove("d-none");
           stickerBtn.classList.add("d-none");
         }
       }
 
       function resetQuiz() {
-        const questions = ["q1", "q2", "q3", "q4"];
-        questions.forEach((q) => {
-          document.getElementsByName(q).forEach((radio) => {
-            radio.checked = false;
-            const feedback =
-              radio.nextElementSibling.querySelector(".feedback");
-            if (feedback) {
-              feedback.textContent = "";
-            }
-          });
-        });
+        score = 0;
+        currentQuestion = 1;
 
+        for (let i = 1; i <= totalQuestions; i++) {
+          const q = document.getElementById(`question-${i}`);
+          q.classList.remove("active", "slide-out-left");
+        }
+
+        document.getElementById("question-1").classList.add("active");
         document.getElementById("quiz-score").classList.add("d-none");
-        document.getElementById("sticker-button").classList.add("d-none");
         document.getElementById("retryBtn").classList.add("d-none");
+        document.getElementById("sticker-button").classList.add("d-none");
       }
 
       function claimSticker(pageKey) {
