@@ -171,3 +171,32 @@ main {
 #map-btn:active {
   background-color: #ff5722; /* Darker color when clicked */
 }
+
+@media (min-width: 720px) {
+  .animal-img-container{
+    display: flex;
+    justify-content: center;
+  }
+  .animal-image{
+    width: 60%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .animal-image{
+    width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .animal-image{
+    width: 40%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .animal-image{
+    width: 30%;
+    
+  }
+}
